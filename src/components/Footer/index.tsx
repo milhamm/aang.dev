@@ -4,7 +4,7 @@ import Link from "next/link";
 const FooterItem = ({ href, text, blank }: any) => {
   return (
     <li>
-      {blank ? (
+      {!blank ? (
         <Link href={href}>
           <a className="text-gray-400">{text}</a>
         </Link>
@@ -28,7 +28,7 @@ const FooterSection = ({ children }: any) => {
 
 const Footer = () => {
   return (
-    <footer className="max-w-3xl mx-auto px-4 mt-10 mb-8">
+    <footer className="max-w-3xl mx-auto px-4 mt-10 mb-12">
       <hr className="border-gray-100 dark:border-gray-800" />
       <div className="mt-16 flex">
         <FooterSection>
@@ -39,10 +39,11 @@ const Footer = () => {
         </FooterSection>
         <FooterSection>
           <FooterItem href="https://github.com/milhamm" text="Github" blank />
-          <FooterItem href="https://twitter.com/gluekol" text="Twitter" />
+          <FooterItem href="https://twitter.com/gluekol" text="Twitter" blank />
           <FooterItem
             href="https://www.linkedin.com/in/milhamm/"
             text="LinkedIn"
+            blank
           />
         </FooterSection>
         <FooterSection>

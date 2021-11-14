@@ -20,12 +20,14 @@ const Home: NextPage = () => {
             data={{
               title: "Mocking REST API using MSW",
               date: "14 November 2021",
+              color: "orange",
             }}
           />
           <PostCard
             data={{
               title: "Apa tuh frontend?",
               date: "14 November 2021",
+              color: "pink",
             }}
           />
         </div>
