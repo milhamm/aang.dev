@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { SEOProps } from "@/types/";
+import { SEOProps } from "types";
 
 const SEO = ({ meta }: SEOProps) => {
   const title: String = meta?.title ? meta.title : "Hello, I'm Aang";
