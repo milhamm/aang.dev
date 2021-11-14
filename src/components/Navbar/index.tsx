@@ -6,7 +6,7 @@ const Navbar = () => {
   const [currentTheme, setCurrentTheme] = useState<string | undefined>("dark");
   const { theme, setTheme } = useTheme();
 
-  useEffect(() => setCurrentTheme(theme), [theme]);
+  useEffect(() => setCurrentTheme(theme), []);
 
   return (
     <nav className="max-w-3xl mx-auto py-8 mb-12 w-full flex justify-between">
@@ -18,7 +18,8 @@ const Navbar = () => {
       <button
         className="mr-4 p-1 bg-gray-200 dark:bg-gray-800 rounded-lg"
         onClick={() => {
-          setTheme(currentTheme === "light" ? "dark" : "light");
+          setTheme(theme === "light" ? "dark" : "light");
+          setCurrentTheme(currentTheme === "light" ? "dark" : "light");
         }}
       >
         <svg

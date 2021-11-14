@@ -17,7 +17,7 @@ const NavItem = ({ href, text }: NavItemPropTypes) => {
       <Link href={href}>
         <a
           className={cx(
-            "px-5 py-2 h-full rounded-lg font-medium cursor-pointer mr-8 hover:bg-gray-800",
+            "px-5 py-2 h-full rounded-lg font-medium cursor-pointer mr-8 hover:bg-blueGray-100 dark:hover:bg-gray-800",
             {
               "dark:text-gray-200": !isActive,
               "dark:text-white": isActive,

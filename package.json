@@ -12,6 +12,7 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.2.2",
     "classnames": "^2.3.1",
     "next": "11.1.2",
     "next-themes": "^0.0.15",
