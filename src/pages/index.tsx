@@ -1,11 +1,12 @@
-import Page from "@/components/Page";
+import Hero from "components/Hero";
+import { DefaultLayout } from "components/Layout";
 import type { NextPage } from "next";
 
 const Home: NextPage = () => {
   return (
-    <Page>
-      <h1>Ini Aang</h1>
-    </Page>
+    <DefaultLayout>
+      <Hero />
+    </DefaultLayout>
   );
 };
 
