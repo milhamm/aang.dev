@@ -3,6 +3,10 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
+* {
+  transition: background-color ease 0.2s;
+}
+
 #__next {
   @apply bg-white dark:bg-gray-900;
   min-height: 100vh;
