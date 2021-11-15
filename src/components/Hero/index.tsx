@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <div className="w-full py-12 bg-dots-light dark:bg-dots-dark bg-center bg-20/20 flex items-center justify-center">
+    <div className="w-full py-[5rem] bg-dots-light dark:bg-dots-dark bg-center bg-20/20 flex items-center justify-center">
       <div className="flex items-center lg:items-center flex-col lg:flex-row">
         <div className="w-[108px] h-[108px] bg-gradient-to-br from-cyan-500 to-cyan-300 rounded-full flex items-center justify-center">
           <Image

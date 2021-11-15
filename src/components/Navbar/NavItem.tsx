@@ -9,8 +9,8 @@ interface NavItemPropTypes {
 }
 
 const NavItem = ({ href, text }: NavItemPropTypes) => {
-  const router = useRouter();
-  const isActive = router.asPath == href;
+  const { asPath } = useRouter();
+  const isActive = asPath == href;
 
   return (
     <li>

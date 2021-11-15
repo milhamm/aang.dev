@@ -14,7 +14,7 @@ module.exports = {
         "dots-light": `radial-gradient(#CCCCCC 1px,transparent 0)`,
       },
       backgroundSize: {
-        "20/20": "14px 14px",
+        "20/20": "20px 20px",
       },
       fontFamily: {
         sans: ["Quicksand"],

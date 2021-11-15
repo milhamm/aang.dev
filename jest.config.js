@@ -18,6 +18,8 @@ module.exports = {
 
     "^components/(.*)$": "<rootDir>/src/components/$1",
     "^pages/(.*)$": "<rootDir>/src/pages/$1",
+    "^mocks/(.*)$": "<rootDir>/src/mocks/$1",
+    "^utils/(.*)$": "<rootDir>/src/utils/$1",
   },
   testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/.next/"],
   testEnvironment: "jsdom",
@@ -30,5 +32,6 @@ module.exports = {
     "/node_modules/",
     "^.+\\.module\\.(css|sass|scss)$",
   ],
+  setupFiles: ["<rootDir>/src/mocks/matchMedia.mock.ts"],
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
 };
