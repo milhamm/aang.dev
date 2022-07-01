@@ -3,7 +3,7 @@ import React, { SyntheticEvent } from "react";
 import axios from "axios";
 
 const ExcelPage = () => {
-  const [excel, setExcel] = React.useState<string | Blob>("null");
+  const [excel, setExcel] = React.useState<any>(null);
   const [endpoint, setEndpoint] = React.useState("");
   const [images, setImages] = React.useState<any>(null);
 
@@ -56,7 +56,9 @@ const ExcelPage = () => {
               type="file"
               required
               accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
-              onChange={(e) => setExcel(e.target.files[0])}
+              onChange={(e) =>
+                setExcel(e.target.files?.length && e.target.files[0])
+              }
             />
           </div>
 
