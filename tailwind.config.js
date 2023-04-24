@@ -1,8 +1,7 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  mode: "jit",
-  purge: [
+  content: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
@@ -29,13 +28,9 @@ module.exports = {
         orange: colors.orange,
         sky: colors.sky,
         cyan: colors.cyan,
-        blueGray: colors.blueGray,
+        blueGray: colors.slate,
         amber: colors.amber,
       },
     },
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [require("@tailwindcss/line-clamp")],
 };

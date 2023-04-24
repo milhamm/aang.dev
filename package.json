@@ -7,36 +7,26 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@tailwindcss/line-clamp": "^0.2.2",
-    "axios": "^0.27.2",
-    "classnames": "^2.3.1",
-    "cookie": "^0.4.1",
     "next": "13.3.1",
-    "next-themes": "^0.0.15",
+    "next-themes": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.15.6",
-    "@babel/preset-typescript": "^7.15.0",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.1.0",
-    "@types/react": "17.0.24",
-    "autoprefixer": "^10.4.0",
-    "babel-jest": "^27.2.2",
+    "@babel/core": "^7.21.4",
+    "@babel/preset-typescript": "^7.21.4",
+    "@types/node": "18.16.0",
+    "@types/react": "18.0.38",
+    "autoprefixer": "^10.4.14",
+    "clsx": "^1.2.1",
     "eslint": "7.32.0",
     "eslint-config-next": "13.3.1",
     "husky": "^7.0.2",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^27.2.2",
-    "postcss": "^8.3.11",
-    "react-test-renderer": "^17.0.2",
-    "tailwindcss": "^2.2.19",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.1",
     "typescript": "5.0.4"
   }
 }
