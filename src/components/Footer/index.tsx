@@ -5,8 +5,8 @@ const FooterItem = ({ href, text, blank }: any) => {
   return (
     <li>
       {!blank ? (
-        <Link href={href}>
-          <a className="text-gray-400">{text}</a>
+        <Link href={href} className="text-gray-400">
+          {text}
         </Link>
       ) : (
         <a
