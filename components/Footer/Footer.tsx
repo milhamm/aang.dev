@@ -1,26 +1,4 @@
-import React from "react";
-import Link from "next/link";
-
-const FooterItem = ({ href, text, blank }: any) => {
-  return (
-    <li>
-      {!blank ? (
-        <Link href={href} className="text-gray-400">
-          {text}
-        </Link>
-      ) : (
-        <a
-          href={href}
-          className="text-gray-400"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {text}
-        </a>
-      )}
-    </li>
-  );
-};
+import { FooterItem } from "./FooterItem";
 
 const FooterSection = ({ children }: any) => {
   return <ul className="flex gap-3 flex-col w-32">{children}</ul>;
@@ -28,7 +6,7 @@ const FooterSection = ({ children }: any) => {
 
 const Footer = () => {
   return (
-    <footer className="max-w-3xl mx-auto px-4 mt-10 mb-12">
+    <footer className="max-w-3xl mx-auto px-4 mt-10 pb-12">
       <hr className="border-gray-100 dark:border-gray-800" />
       <div className="mt-16 flex">
         <FooterSection>
@@ -56,4 +34,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export { Footer };

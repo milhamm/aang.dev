@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 interface SectionPropTypes {
   title: string;
@@ -12,11 +12,11 @@ const Section = ({ title, children }: SectionPropTypes) => {
         {title}
       </h2>
       {children}
-      <span className="inline-block mt-8 self-end flex gap-4 hover:gap-5 transition-all cursor-pointer">
+      <span className="mt-8 self-end flex gap-4 hover:gap-5 transition-all cursor-pointer">
         <span className="">See More</span> →
       </span>
     </div>
   );
 };
 
-export default Section;
+export { Section };

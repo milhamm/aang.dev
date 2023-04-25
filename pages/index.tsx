@@ -1,8 +1,9 @@
-import Hero from "components/Hero";
-import { DefaultLayout } from "components/Layout";
-import PostCard from "components/PostCard";
-import Section from "components/Section";
 import type { NextPage } from "next";
+
+import Hero from "~/components/Hero";
+import { DefaultLayout } from "~/components/Layout";
+import PostCard from "~/components/PostCard";
+import { Section } from "~/components/Section";
 
 const Home: NextPage = () => {
   return (
