@@ -6,7 +6,7 @@ const FooterSection = ({ children }: any) => {
 
 const Footer = () => {
   return (
-    <footer className="max-w-3xl mx-auto px-2 mt-10">
+    <footer className="max-w-3xl mx-auto px-5 mt-10 pb-8">
       <hr className="border-gray-100 dark:border-gray-600" />
       <div className="mt-10 flex">
         <FooterSection>

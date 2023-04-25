@@ -54,6 +54,9 @@ devDependencies:
   prettier:
     specifier: ^2.8.8
     version: 2.8.8
+  tailwind-merge:
+    specifier: ^1.12.0
+    version: 1.12.0
   tailwindcss:
     specifier: ^3.3.1
     version: 3.3.1(postcss@8.4.23)
@@ -4013,6 +4016,13 @@ packages:
       slice-ansi: 4.0.0
       string-width: 4.2.3
       strip-ansi: 6.0.1
+    dev: true
+
+  /tailwind-merge@1.12.0:
+    resolution:
+      {
+        integrity: sha512-Y17eDp7FtN1+JJ4OY0Bqv9OA41O+MS8c1Iyr3T6JFLnOgLg3EvcyMKZAnQ8AGyvB5Nxm3t9Xb5Mhe139m8QT/g==,
+      }
     dev: true
 
   /tailwindcss@3.3.1(postcss@8.4.23):

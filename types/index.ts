@@ -1,14 +1,14 @@
 import React from "react";
 
-export declare type SEOType = {
+export type SEOType = {
   title?: string;
 };
 
-export declare type SEOProps = {
+export type SEOProps = {
   meta?: SEOType;
 };
 
-export declare type PageProps = {
+export type DefaultLayoutProps = {
   children: React.ReactNode;
   meta?: SEOType;
 };
