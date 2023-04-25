@@ -2,18 +2,11 @@ import Link from "next/link";
 
 const FooterItem = ({ href, text, blank }: any) => {
   return (
-    <li>
+    <li className="hover:underline text-gray-500 text-sm lg:text-lg">
       {!blank ? (
-        <Link href={href} className="text-gray-400">
-          {text}
-        </Link>
+        <Link href={href}>{text}</Link>
       ) : (
-        <a
-          href={href}
-          className="text-gray-400"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href={href} target="_blank" rel="noopener noreferrer">
           {text}
         </a>
       )}
