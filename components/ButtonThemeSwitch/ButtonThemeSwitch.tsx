@@ -21,7 +21,7 @@ const ButtonThemeSwitch = () => {
   return (
     <button
       data-testid="btn-toggle"
-      className="mr-4 p-1 bg-neutral-200 dark:bg-gray-800 rounded-lg"
+      className="mr-5 p-1 bg-neutral-200 dark:bg-gray-800 rounded-lg"
       onClick={() => {
         setTheme(resolvedTheme === "light" ? "dark" : "light");
       }}
