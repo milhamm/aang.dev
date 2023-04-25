@@ -17,6 +17,25 @@ module.exports = {
       backgroundSize: {
         "20/20": "20px 20px",
       },
+      animation: {
+        kenBurns: "kenBurns 1s ease-in",
+        notSoBoring: "notSoBoring 1.2s ease-out",
+      },
+      keyframes: {
+        notSoBoring: {
+          "0%": { opacity: 0, filter: "brightness(1) blur(20px)" },
+          "10%": { opacity: 1, filter: "brightness(2) blur(10px)" },
+          "100%": { opacity: 1, filter: "brightness(1) blur(0)" },
+        },
+        kenBurns: {
+          "0%": {
+            opacity: 0,
+            clipPath: "inset(5%)",
+            transform: "scale(111.11%)",
+          },
+          "100%": { opacity: 1, clipPath: "inset(0)", transform: "scale(1)" },
+        },
+      },
       fontFamily: {
         sans: ["var(--font-quicksand)", ...fontFamily.sans],
       },

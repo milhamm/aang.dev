@@ -2,14 +2,12 @@ import type { NextPage } from "next";
 
 import Hero from "~/components/Hero";
 import { DefaultLayout } from "~/components/Layout";
-import PostCard from "~/components/PostCard";
-import { Section } from "~/components/Section";
 
 const Home: NextPage = () => {
   return (
     <DefaultLayout>
       <Hero />
-      <Section title="Latest Posts">
+      {/* <Section title="Latest Posts">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <PostCard
             data={{
@@ -32,7 +30,7 @@ const Home: NextPage = () => {
             }}
           />
         </div>
-      </Section>
+      </Section> */}
     </DefaultLayout>
   );
 };
