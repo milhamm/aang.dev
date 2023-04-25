@@ -30,7 +30,7 @@ const NavItem = ({ href, text }: NavItemPropTypes) => {
             className="px-3 bg-neutral-200 dark:bg-gray-800 lg:px-4 py-1 lg:py-2 w-full h-full rounded-lg absolute z-0 inset-0"
           />
         ) : null}
-        <span className="relative">{text}</span>
+        <span className="relative z-50">{text}</span>
       </Link>
     </li>
   );
