@@ -1,8 +1,8 @@
-import React from "react";
-import SEO from "components/SEO";
 import { PageProps } from "types";
-import Navbar from "components/Navbar";
-import Footer from "components/Footer";
+
+import { Footer } from "~/components/Footer";
+import { Navbar } from "~/components/Navbar";
+import SEO from "~/components/SEO";
 
 const DefaultLayout = ({ children, meta }: PageProps) => {
   return (
@@ -15,4 +15,4 @@ const DefaultLayout = ({ children, meta }: PageProps) => {
   );
 };
 
-export default DefaultLayout;
+export { DefaultLayout };

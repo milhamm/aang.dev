@@ -1,7 +1,6 @@
-import React from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
 import cx from "clsx";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface NavItemPropTypes {
   href: string;
@@ -30,4 +29,4 @@ const NavItem = ({ href, text }: NavItemPropTypes) => {
   );
 };
 
-export default NavItem;
+export { NavItem };

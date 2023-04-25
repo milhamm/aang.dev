@@ -1,6 +1,7 @@
 import { useTheme } from "next-themes";
-import React, { useEffect, useState } from "react";
-import NavItem from "./NavItem";
+import { useEffect, useState } from "react";
+
+import { NavItem } from "~/components/Navbar/NavItem";
 
 const Navbar = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -48,4 +49,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export { Navbar };
