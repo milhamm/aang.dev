@@ -1,7 +1,6 @@
-import React from 'react'
-import cx from 'clsx'
+import { cn } from '@/lib/utils'
 
-interface PostCardPropTypes {
+type PostCardProps = {
   data: {
     date: string
     title: string
@@ -15,11 +14,11 @@ const pallete = {
   pink: 'from-red-500 to-pink-600',
 }
 
-const PostCard = ({ data }: PostCardPropTypes) => {
+export function PostCard({ data }: PostCardProps) {
   return (
     <div className='border-blueGray-200 min-h-[170px] w-full cursor-pointer rounded-3xl border p-3 transition-all hover:scale-[1.05] dark:border-white'>
       <div
-        className={cx(
+        className={cn(
           'h-full rounded-2xl bg-gradient-to-br px-4 py-4 text-sm text-white',
           pallete[data.color || 'blue']
         )}
@@ -30,5 +29,3 @@ const PostCard = ({ data }: PostCardPropTypes) => {
     </div>
   )
 }
-
-export default PostCard

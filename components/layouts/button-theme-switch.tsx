@@ -2,7 +2,7 @@
 
 import { useTheme } from 'next-themes'
 
-const ButtonThemeSwitch = () => {
+export function ButtonThemeSwitch() {
   const { resolvedTheme, setTheme } = useTheme()
 
   return (
@@ -35,5 +35,3 @@ const ButtonThemeSwitch = () => {
     </button>
   )
 }
-
-export { ButtonThemeSwitch }

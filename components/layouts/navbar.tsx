@@ -2,15 +2,31 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import cx from 'clsx'
 import { motion } from 'framer-motion'
 
-interface NavItemPropTypes {
+import { cn } from '@/lib/utils'
+
+import { ButtonThemeSwitch } from './button-theme-switch'
+
+export function Navbar() {
+  return (
+    <nav className='mx-auto mb-2 flex w-full max-w-3xl justify-between py-8 lg:mb-12'>
+      <ul className='flex items-center'>
+        <NavItem href='/' text='Home' />
+        <NavItem href='/blog' text='Blog' />
+        <NavItem href='/about' text='About Me' />
+      </ul>
+      <ButtonThemeSwitch />
+    </nav>
+  )
+}
+
+type NavItemProps = {
   href: string
   text: string
 }
 
-const NavItem = ({ href, text }: NavItemPropTypes) => {
+function NavItem({ href, text }: NavItemProps) {
   const pathname = usePathname()
   const isActive = pathname == href
 
@@ -18,7 +34,7 @@ const NavItem = ({ href, text }: NavItemPropTypes) => {
     <li>
       <Link
         href={href}
-        className={cx(
+        className={cn(
           'relative mr-2 h-full cursor-pointer rounded-lg px-3 py-1 text-sm lg:mr-5 lg:px-4 lg:py-2 lg:text-base',
           {
             'dark:text-gray-200': !isActive,
@@ -29,6 +45,7 @@ const NavItem = ({ href, text }: NavItemPropTypes) => {
         {isActive ? (
           <motion.span
             layoutId='hovered'
+            transition={{ easings: 'linear' }}
             className='absolute inset-0 z-0 h-full w-full rounded-lg bg-neutral-200 px-3 py-1 dark:bg-gray-800 lg:px-4 lg:py-2'
           />
         ) : null}
@@ -37,5 +54,3 @@ const NavItem = ({ href, text }: NavItemPropTypes) => {
     </li>
   )
 }
-
-export { NavItem }

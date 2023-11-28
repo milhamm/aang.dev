@@ -1,8 +1,10 @@
 {
+    "$schema": "https://json.schemastore.org/tsconfig",
     "compilerOptions": {
         "target": "ESNext",
         "lib": ["dom", "dom.iterable", "esnext"],
         "allowJs": true,
+        "noImplicitAny": true,
         "skipLibCheck": true,
         "strict": true,
         "forceConsistentCasingInFileNames": true,
@@ -15,7 +17,9 @@
         "jsx": "preserve",
         "baseUrl": ".",
         "paths": {
-            "@/*": ["./*"],
+            "@/app/*": ["./app/*"],
+            "@/components/*": ["./components/*"],
+            "@/lib/*": ["./lib/*"],
             "~/*": ["./public/*"]
         },
         "incremental": true,

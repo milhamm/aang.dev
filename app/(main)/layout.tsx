@@ -1,5 +1,4 @@
-import { Footer } from '@/components/Footer'
-import { Navbar } from '@/components/Navbar'
+import { Footer, Navbar } from '@/components/layouts'
 
 export default function DefaultLayout({ children }: React.PropsWithChildren) {
   return (

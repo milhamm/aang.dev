@@ -1,11 +1,14 @@
-import Hero from '@/components/Hero'
-import { Section } from '@/components/Section'
+import { Section } from '@/components/shared'
+
+import { Hero } from './_component'
 
 export default function IndexPage() {
   return (
     <>
       <Hero />
-      <Section title='Latest Posts'>{'No Post :('}</Section>
+      <Section title='Latest Posts' showMore={false}>
+        {'No Post :('}
+      </Section>
     </>
   )
 }

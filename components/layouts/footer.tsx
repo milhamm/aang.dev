@@ -1,8 +1,4 @@
-import { FooterItem } from './FooterItem'
-
-const FooterSection = ({ children }: any) => {
-  return <ul className='flex w-32 flex-col gap-3'>{children}</ul>
-}
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -26,6 +22,30 @@ const Footer = () => {
         </FooterSection>
       </div>
     </footer>
+  )
+}
+
+function FooterSection({ children }: React.PropsWithChildren) {
+  return <ul className='flex w-32 flex-col gap-3'>{children}</ul>
+}
+
+type FooterItemProps = {
+  href: string
+  text: string
+  blank?: boolean
+}
+
+function FooterItem({ href, text, blank }: FooterItemProps) {
+  return (
+    <li className='text-sm text-gray-500 hover:underline lg:text-base'>
+      {!blank ? (
+        <Link href={href}>{text}</Link>
+      ) : (
+        <a href={href} target='_blank' rel='noopener noreferrer'>
+          {text}
+        </a>
+      )}
+    </li>
   )
 }
 

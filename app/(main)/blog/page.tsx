@@ -1,5 +1,5 @@
-import { Page } from '@/components/Layout/Page'
+import { Layout } from '@/components/layouts'
 
 export default function BlogPage() {
-  return <Page title='Blog'>No Posts</Page>
+  return <Layout title='Blog'>No Posts</Layout>
 }

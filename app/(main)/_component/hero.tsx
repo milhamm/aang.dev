@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-const Hero = () => {
+export function Hero() {
   return (
     <div className='flex w-full items-center justify-center bg-dots-light bg-20/20 bg-center py-[5rem] dark:bg-dots-dark'>
       <div className='flex flex-col items-center p-5 lg:flex-row lg:items-center'>
@@ -21,12 +21,10 @@ const Hero = () => {
             </span>
           </h1>
           <span className='block bg-background  p-3 text-center text-foreground lg:inline-block lg:w-auto lg:text-left'>
-            Frontend Weeb Engineer
+            Software Engineer - Web
           </span>
         </div>
       </div>
     </div>
   )
 }
-
-export default Hero

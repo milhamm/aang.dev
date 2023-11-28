@@ -1,4 +1,4 @@
-import { Quicksand } from 'next/font/google'
+import { Nunito } from 'next/font/google'
 
 import { cn } from '@/lib/utils'
 
@@ -11,16 +11,16 @@ export const metadata = {
   description: 'Personal Blog',
 }
 
-const quicksand = Quicksand({
+const nunito = Nunito({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-quicksand',
+  variable: '--font-brand',
 })
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={cn(quicksand.variable, 'font-sans')}>
+      <body className={cn(nunito.variable, 'font-sans')}>
         <Providers>{children}</Providers>
       </body>
     </html>

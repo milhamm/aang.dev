@@ -1,11 +1,10 @@
-import { cx } from 'utils/cx'
+import { Layout } from '@/components/layouts'
+import { cn } from '@/lib/utils'
 
-import { Page } from '@/components/Layout/Page'
-
-const About = () => {
+export default function AboutPage() {
   return (
-    <Page title='About Me'>
-      <p className={cx('text-lg leading-relaxed')}>
+    <Layout title='About Me'>
+      <p className={cn('text-lg leading-relaxed text-foreground')}>
         Hey, Ilham{' '}
         <span className='bg-gradient-to-br from-cyan-500 to-cyan-300 bg-clip-text text-transparent'>
           (Aang)
@@ -14,8 +13,6 @@ const About = () => {
         Group. I&lsquo;m interested in Software Engineering specifically web development. I got my
         Bachelor of Computer Science degree from Telkom University in 2023.
       </p>
-    </Page>
+    </Layout>
   )
 }
-
-export default About
