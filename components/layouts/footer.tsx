@@ -7,7 +7,7 @@ const Footer = () => {
       <div className='mt-10 flex'>
         <FooterSection>
           <FooterItem href='/' text='Home' />
-          <FooterItem href='/about' text='About Me' />
+          <FooterItem href='/about' text='About' />
           <FooterItem href='/blog' text='Blog' />
           <FooterItem href='/resume' text='Resume' />
         </FooterSection>

@@ -1,6 +1,9 @@
+import Link from 'next/link'
+
 import { cn } from '@/lib/utils'
 
 type PostCardProps = {
+  slug: string
   data: {
     date: string
     title: string
@@ -14,9 +17,12 @@ const pallete = {
   pink: 'from-red-500 to-pink-600',
 }
 
-export function PostCard({ data }: PostCardProps) {
+export function BlogCard({ data, slug }: PostCardProps) {
   return (
-    <div className='border-blueGray-200 min-h-[170px] w-full cursor-pointer rounded-3xl border p-3 transition-all hover:scale-[1.05] dark:border-white'>
+    <Link
+      href={`/blog/${slug}`}
+      className='border-blueGray-200 min-h-[170px] w-full cursor-pointer rounded-3xl border p-3 transition-all dark:border-white'
+    >
       <div
         className={cn(
           'h-full rounded-2xl bg-gradient-to-br px-4 py-4 text-sm text-white',
@@ -26,6 +32,6 @@ export function PostCard({ data }: PostCardProps) {
         <p>{data.date}</p>
         <h3 className='mt-4 line-clamp-4 font-bold'>{data.title}</h3>
       </div>
-    </div>
+    </Link>
   )
 }
