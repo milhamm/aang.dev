@@ -51,11 +51,11 @@ export async function getBlogPost(slug: string): Promise<GetBlogPost> {
         ]
         return options
       },
-      // esbuildOptions(options) {
-      //   options.loader = { '.js': 'jsx' }
-      //   options.tsconfig = `${process.cwd()}/tsconfig-esbuild.json`
-      //   return options
-      // },
+      esbuildOptions(options) {
+        options.loader = { '.js': 'jsx' }
+        options.tsconfig = `${process.cwd()}/tsconfig-esbuild.json`
+        return options
+      },
     })
     return { success: true, data: { ...mdxOut, slug } }
   } catch (error) {
