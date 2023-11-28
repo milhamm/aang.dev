@@ -12,7 +12,7 @@ async function getBlogEntries() {
   return paths
 }
 
-type BundleMDXReturn = Awaited<ReturnType<typeof bundleMDX>>
+type BundleMDXReturn = Awaited<ReturnType<typeof bundleMDX<MatterMetadata>>>
 
 type MatterMetadata = {
   title: string
@@ -36,7 +36,7 @@ export async function getBlogPost(slug: string): Promise<GetBlogPost> {
   const fileEntry = path.join(currentBlogDir, FILENAME)
   try {
     const source = (await fs.readFile(fileEntry)).toString()
-    const mdxOut = await bundleMDX({
+    const mdxOut = await bundleMDX<MatterMetadata>({
       source,
       cwd: currentBlogDir,
       mdxOptions(options) {
