@@ -6,8 +6,8 @@ const FooterSection = ({ children }: any) => {
 
 const Footer = () => {
   return (
-    <footer className='mx-auto mt-10 max-w-3xl px-5 pb-8'>
-      <hr className='border-gray-100 dark:border-gray-600' />
+    <footer className='mx-auto mt-10 max-w-3xl px-5 pb-12'>
+      <hr className='border-border' />
       <div className='mt-10 flex'>
         <FooterSection>
           <FooterItem href='/' text='Home' />
@@ -23,7 +23,6 @@ const Footer = () => {
         <FooterSection>
           <FooterItem href='/slides' text='Slides' />
           <FooterItem href='/metrics' text='Metrics' />
-          <FooterItem href='/weeb' text='Weeb Corner' />
         </FooterSection>
       </div>
     </footer>

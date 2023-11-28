@@ -17,7 +17,7 @@ const pallete = {
 
 const PostCard = ({ data }: PostCardPropTypes) => {
   return (
-    <div className='min-h-[170px] w-full cursor-pointer rounded-3xl border border-blueGray-200 p-3 transition-all hover:scale-[1.05] dark:border-white'>
+    <div className='border-blueGray-200 min-h-[170px] w-full cursor-pointer rounded-3xl border p-3 transition-all hover:scale-[1.05] dark:border-white'>
       <div
         className={cx(
           'h-full rounded-2xl bg-gradient-to-br px-4 py-4 text-sm text-white',

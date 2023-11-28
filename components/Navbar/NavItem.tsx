@@ -1,5 +1,7 @@
+'use client'
+
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import cx from 'clsx'
 import { motion } from 'framer-motion'
 
@@ -9,8 +11,8 @@ interface NavItemPropTypes {
 }
 
 const NavItem = ({ href, text }: NavItemPropTypes) => {
-  const { asPath } = useRouter()
-  const isActive = asPath == href
+  const pathname = usePathname()
+  const isActive = pathname == href
 
   return (
     <li>

@@ -16,5 +16,8 @@
         "javascriptreact": "javascriptreact",
         "typescriptreact": "typescriptreact"
     },
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
     "tailwindCSS.files.exclude": ["**/*.{md,js,ts,json,py,yaml,yml}"]
 }

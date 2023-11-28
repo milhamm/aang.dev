@@ -14,13 +14,13 @@ const Hero = () => {
           />
         </div>
         <div className='ml-0 mt-5 px-4 lg:ml-6 lg:mt-0'>
-          <h1 className='bg-white p-3 text-center text-2xl font-bold text-gray-800 dark:bg-black dark:text-white lg:text-left'>
+          <h1 className='bg-background p-3 text-center text-2xl font-bold text-foreground lg:text-left'>
             Muhammad Ilham Mubarak //{' '}
             <span className='bg-gradient-to-br from-cyan-500 to-cyan-300 bg-clip-text text-transparent'>
               Aang
             </span>
           </h1>
-          <span className='block bg-white p-3 text-center text-gray-800 dark:bg-black dark:text-white lg:inline-block lg:w-auto lg:text-left'>
+          <span className='block bg-background  p-3 text-center text-foreground lg:inline-block lg:w-auto lg:text-left'>
             Frontend Weeb Engineer
           </span>
         </div>

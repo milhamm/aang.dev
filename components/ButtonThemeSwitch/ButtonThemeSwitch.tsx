@@ -1,22 +1,9 @@
-import { useEffect, useRef } from 'react'
+'use client'
+
 import { useTheme } from 'next-themes'
 
 const ButtonThemeSwitch = () => {
   const { resolvedTheme, setTheme } = useTheme()
-
-  const isMounted = useRef(false)
-
-  // useEffect only runs on the client, so now we can safely show the UI
-  useEffect(() => {
-    isMounted.current = true
-    return () => {
-      isMounted.current = false
-    }
-  }, [])
-
-  if (!isMounted) {
-    return null
-  }
 
   return (
     <button

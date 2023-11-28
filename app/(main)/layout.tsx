@@ -1,18 +1,12 @@
-import { DefaultLayoutProps } from 'types'
-
 import { Footer } from '@/components/Footer'
 import { Navbar } from '@/components/Navbar'
-import SEO from '@/components/SEO'
 
-const DefaultLayout = ({ children, meta }: DefaultLayoutProps) => {
+export default function DefaultLayout({ children }: React.PropsWithChildren) {
   return (
     <>
-      <SEO meta={meta} />
       <Navbar />
       <main className='mx-auto max-w-3xl px-5'>{children}</main>
       <Footer />
     </>
   )
 }
-
-export { DefaultLayout }
