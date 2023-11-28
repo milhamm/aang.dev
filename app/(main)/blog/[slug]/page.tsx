@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import { getMDXComponent } from 'mdx-bundler/client'
 import { Metadata } from 'next'
 
-import { getBlogPost } from '@/lib/blogs.server'
+import { getAllBlogPosts, getBlogPost } from '@/lib/blogs.server'
 
 type BlogDetailPageProps = {
   params: {
@@ -22,6 +22,11 @@ export async function generateMetadata({
   return {
     title: frontmatter.title,
   }
+}
+
+export async function generateStaticParams() {
+  const posts = await getAllBlogPosts({ withDraft: true })
+  return posts.map((post) => ({ slug: post.slug }))
 }
 
 export default async function BlogDetailPage({ params: { slug } }: BlogDetailPageProps) {
