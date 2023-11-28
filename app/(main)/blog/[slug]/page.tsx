@@ -38,6 +38,7 @@ export default async function BlogDetailPage({ params: { slug } }: BlogDetailPag
 
   return (
     <article className='prose dark:prose-invert'>
+      Test
       <Content />
     </article>
   )
