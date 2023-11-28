@@ -1,38 +1,46 @@
 {
-  "name": "aang.dev",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "prepare": "husky install",
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "format": "prettier --check --ignore-path .gitignore .",
-    "format:write": "prettier --write --ignore-path .gitignore ."
-  },
-  "dependencies": {
-    "framer-motion": "^10.12.4",
-    "next": "13.3.1",
-    "next-themes": "^0.2.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.21.4",
-    "@babel/preset-typescript": "^7.21.4",
-    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
-    "@types/node": "18.16.0",
-    "@types/react": "18.0.38",
-    "autoprefixer": "^10.4.14",
-    "clsx": "^1.2.1",
-    "eslint": "7.32.0",
-    "eslint-config-next": "13.3.1",
-    "husky": "^7.0.2",
-    "postcss": "^8.4.23",
-    "prettier": "^2.8.8",
-    "tailwind-merge": "^1.12.0",
-    "tailwindcss": "^3.3.1",
-    "typescript": "5.0.4"
-  }
+    "name": "aang.dev",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "prepare": "husky install",
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "format": "prettier --check --ignore-path .gitignore .",
+        "format:write": "prettier --write --ignore-path .gitignore ."
+    },
+    "dependencies": {
+        "framer-motion": "^10.16.5",
+        "next": "14.0.3",
+        "next-themes": "^0.2.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.23.3",
+        "@babel/preset-typescript": "^7.23.3",
+        "@types/node": "18.16.0",
+        "@types/react": "18.0.38",
+        "@typescript-eslint/eslint-plugin": "^6.13.1",
+        "@typescript-eslint/parser": "^6.13.1",
+        "autoprefixer": "^10.4.16",
+        "clsx": "^2.0.0",
+        "eslint": "8.54.0",
+        "eslint-config-next": "14.0.3",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-import": "^2.29.0",
+        "eslint-plugin-react": "^7.33.2",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-simple-import-sort": "^10.0.0",
+        "eslint-plugin-tailwindcss": "^3.13.0",
+        "husky": "^8.0.3",
+        "postcss": "^8.4.31",
+        "prettier": "^3.1.0",
+        "prettier-plugin-tailwindcss": "^0.5.7",
+        "tailwind-merge": "^2.0.0",
+        "tailwindcss": "^3.3.5",
+        "typescript": "~5.1.3"
+    }
 }

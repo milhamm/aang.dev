@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react'
 
 export type SEOType = {
-  title?: string;
-};
+  title?: string
+}
 
 export type SEOProps = {
-  meta?: SEOType;
-};
+  meta?: SEOType
+}
 
 export type DefaultLayoutProps = {
-  children: React.ReactNode;
-  meta?: SEOType;
-};
+  children: React.ReactNode
+  meta?: SEOType
+}

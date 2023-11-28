@@ -1,32 +1,32 @@
-import Image from "next/image";
+import Image from 'next/image'
 
 const Hero = () => {
   return (
-    <div className="w-full py-[5rem] bg-dots-light dark:bg-dots-dark bg-center bg-20/20 flex items-center justify-center">
-      <div className="flex items-center lg:items-center flex-col lg:flex-row p-5">
-        <div className="w-[140px] h-[140px] mask-squircle bg-white dark:bg-black flex items-center justify-center">
+    <div className='flex w-full items-center justify-center bg-dots-light bg-20/20 bg-center py-[5rem] dark:bg-dots-dark'>
+      <div className='flex flex-col items-center p-5 lg:flex-row lg:items-center'>
+        <div className='mask-squircle flex h-[140px] w-[140px] items-center justify-center bg-white dark:bg-black'>
           <Image
-            src="https://avatars.githubusercontent.com/u/35242329?v=4"
-            alt="Aang"
-            className="mask-squircle"
-            width="120"
-            height="120"
+            src='https://avatars.githubusercontent.com/u/35242329?v=4'
+            alt='Aang'
+            className='mask-squircle'
+            width='120'
+            height='120'
           />
         </div>
-        <div className="ml-0 mt-5 lg:mt-0 lg:ml-6 px-4">
-          <h1 className="text-center lg:text-left text-2xl font-bold text-gray-800 dark:text-white bg-white dark:bg-black p-3">
-            Muhammad Ilham Mubarak //{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-br from-cyan-500 to-cyan-300">
+        <div className='ml-0 mt-5 px-4 lg:ml-6 lg:mt-0'>
+          <h1 className='bg-white p-3 text-center text-2xl font-bold text-gray-800 dark:bg-black dark:text-white lg:text-left'>
+            Muhammad Ilham Mubarak //{' '}
+            <span className='bg-gradient-to-br from-cyan-500 to-cyan-300 bg-clip-text text-transparent'>
               Aang
             </span>
           </h1>
-          <span className="text-center block lg:inline-block lg:w-auto bg-white dark:bg-black lg:text-left text-gray-800 dark:text-white p-3">
+          <span className='block bg-white p-3 text-center text-gray-800 dark:bg-black dark:text-white lg:inline-block lg:w-auto lg:text-left'>
             Frontend Weeb Engineer
           </span>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

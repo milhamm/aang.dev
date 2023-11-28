@@ -1,7 +1,7 @@
-import type { NextPage } from "next";
+import type { NextPage } from 'next'
 
-import Hero from "~/components/Hero";
-import { DefaultLayout } from "~/components/Layout";
+import Hero from '@/components/Hero'
+import { DefaultLayout } from '@/components/Layout'
 
 const Home: NextPage = () => {
   return (
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
         </div>
       </Section> */}
     </DefaultLayout>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

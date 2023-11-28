@@ -1,1 +1,1 @@
-export * from "./ButtonThemeSwitch";
+export * from './ButtonThemeSwitch'

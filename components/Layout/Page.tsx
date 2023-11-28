@@ -1,13 +1,13 @@
-import { DefaultLayoutProps } from "types";
+import { DefaultLayoutProps } from 'types'
 
-import { DefaultLayout } from "./DefaultLayout";
-import { Title } from "./Title";
+import { DefaultLayout } from './DefaultLayout'
+import { Title } from './Title'
 
 type PageProps = {
-  children: React.ReactNode;
-  title?: string;
-  subtitle?: string;
-} & Omit<DefaultLayoutProps, "children">;
+  children: React.ReactNode
+  title?: string
+  subtitle?: string
+} & Omit<DefaultLayoutProps, 'children'>
 
 const Page = ({ meta, children, title }: PageProps) => {
   return (
@@ -15,7 +15,7 @@ const Page = ({ meta, children, title }: PageProps) => {
       <Title>{title}</Title>
       <div>{children}</div>
     </DefaultLayout>
-  );
-};
+  )
+}
 
-export { Page };
+export { Page }
