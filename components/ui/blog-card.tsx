@@ -1,5 +1,6 @@
 import Link from 'next/link'
 
+import { ColorPallete, pallete } from '@/lib/pallete'
 import { cn } from '@/lib/utils'
 
 type PostCardProps = {
@@ -7,21 +8,15 @@ type PostCardProps = {
   data: {
     date: string
     title: string
-    color?: 'blue' | 'orange' | 'pink'
+    color?: ColorPallete
   }
-}
-
-const pallete = {
-  blue: 'from-cyan-500 to-blue-700',
-  orange: 'from-orange-400 to-amber-400',
-  pink: 'from-red-500 to-pink-600',
 }
 
 export function BlogCard({ data, slug }: PostCardProps) {
   return (
     <Link
       href={`/blog/${slug}`}
-      className='border-blueGray-200 min-h-[170px] w-full cursor-pointer rounded-3xl border p-3 transition-all dark:border-white'
+      className='min-h-[170px] w-full cursor-pointer rounded-3xl border-2 border-border p-2 transition-all'
     >
       <div
         className={cn(

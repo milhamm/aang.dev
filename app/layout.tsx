@@ -1,4 +1,4 @@
-import { Nunito } from 'next/font/google'
+import { Nunito, Nunito_Sans } from 'next/font/google'
 
 import { cn } from '@/lib/utils'
 
@@ -17,10 +17,16 @@ const nunito = Nunito({
   variable: '--font-brand',
 })
 
+const nunitoSans = Nunito_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-head',
+})
+
 export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={cn(nunito.variable, 'font-sans')}>
+      <body className={cn(nunito.variable, nunitoSans.variable, 'font-sans')}>
         <Providers>{children}</Providers>
       </body>
     </html>

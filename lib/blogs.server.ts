@@ -14,7 +14,7 @@ async function getBlogEntries() {
 
 type BundleMDXReturn = Awaited<ReturnType<typeof bundleMDX<MatterMetadata>>>
 
-type MatterMetadata = {
+export type MatterMetadata = {
   title: string
   status: 'published' | 'draft'
   publishedAt: string

@@ -4,6 +4,8 @@ import { Metadata } from 'next'
 
 import { getAllBlogPosts, getBlogPost } from '@/lib/blogs.server'
 
+import { BlogHeader } from './_component/blog-header'
+
 type BlogDetailPageProps = {
   params: {
     slug: string
@@ -34,12 +36,16 @@ export default async function BlogDetailPage({ params: { slug } }: BlogDetailPag
 
   if (!exist) return notFound()
 
+  const { frontmatter } = data
+
   const Content = getMDXComponent(data.code)
 
   return (
-    <article className='prose dark:prose-invert'>
-      Test
-      <Content />
-    </article>
+    <>
+      <BlogHeader frontmatter={frontmatter} />
+      <article className='prose mb-10 pl-0 dark:prose-invert prose-p:text-lg prose-p:leading-10 lg:pl-10'>
+        <Content />
+      </article>
+    </>
   )
 }

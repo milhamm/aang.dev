@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <footer className='mx-auto mt-10 max-w-3xl px-5 pb-12'>
+    <footer className='mx-auto mt-10 w-full max-w-3xl px-5 pb-12'>
       <hr className='border-border' />
       <div className='mt-10 flex'>
         <FooterSection>
