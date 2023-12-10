@@ -2,6 +2,12 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['cdn.discordapp.com', 'avatars.githubusercontent.com'],
+    formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.githubusercontent.com',
+      },
+    ],
   },
 }

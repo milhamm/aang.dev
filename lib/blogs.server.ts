@@ -4,6 +4,8 @@ import { bundleMDX } from 'mdx-bundler'
 import path from 'path'
 import rehypePrettyCode from 'rehype-pretty-code'
 
+import { ColorPallete } from './pallete'
+
 const BLOG_DIR = path.join(process.cwd(), '/blogs')
 const FILENAME = 'index.mdx'
 
@@ -17,6 +19,7 @@ type BundleMDXReturn = Awaited<ReturnType<typeof bundleMDX<MatterMetadata>>>
 export type MatterMetadata = {
   title: string
   status: 'published' | 'draft'
+  pallete: ColorPallete
   publishedAt: string
   updatedAt: string
 }
@@ -67,7 +70,7 @@ type GetAllBlogPostsArgs = {
   withDraft?: boolean
 }
 
-type BlogPost = {
+export type BlogPost = {
   slug: string
   metadata: MatterMetadata
 }

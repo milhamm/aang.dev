@@ -43,7 +43,7 @@ export default async function BlogDetailPage({ params: { slug } }: BlogDetailPag
   return (
     <>
       <BlogHeader frontmatter={frontmatter} />
-      <article className='prose mb-10 pl-0 dark:prose-invert prose-p:text-lg prose-p:leading-10 lg:pl-10'>
+      <article className='prose mb-10 pl-2 dark:prose-invert prose-p:text-sm prose-p:leading-8 md:pl-6 lg:pl-10 lg:prose-p:text-lg lg:prose-p:leading-10'>
         <Content />
       </article>
     </>
