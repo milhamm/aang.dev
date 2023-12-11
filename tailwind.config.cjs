@@ -86,14 +86,11 @@ module.exports = {
         'ken-burns': 'ken-burns 1s ease-in',
         'not-so-boring': 'not-so-boring 1.2s ease-out',
       },
-      backgroundImage: {
-        'dots-dark': `radial-gradient(#444444 1px,transparent 0)`,
-        'dots-light': `radial-gradient(#CCCCCC 1px,transparent 0)`,
-      },
-      backgroundSize: {
-        '20/20': '20px 20px',
-      },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('tailwindcss-animate')],
+  plugins: [
+    require('./lib/plugins/dots.mjs'),
+    require('@tailwindcss/typography'),
+    require('tailwindcss-animate'),
+  ],
 }

@@ -11,7 +11,7 @@ export function BlogList({ posts }: BlogListProps) {
   }
 
   return (
-    <div className='grid grid-cols-1 md:grid-cols-3'>
+    <div className='grid grid-cols-1 gap-2 md:grid-cols-3'>
       {posts.map(({ slug, metadata: { title, publishedAt, pallete } }) => (
         <BlogCard key={slug} slug={slug} data={{ title, date: publishedAt, color: pallete }} />
       ))}

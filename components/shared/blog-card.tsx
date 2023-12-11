@@ -32,7 +32,7 @@ export function BlogCard({ data, slug }: PostCardProps) {
           )}
         >
           <h3 className='z-10 mb-2 line-clamp-4 font-bold'>{data.title}</h3>
-          <span className='z-10 text-muted-foreground'>{publishedAt.getShortFormat()}</span>
+          <span className='z-10 text-xs text-muted-foreground'>{publishedAt.getShortFormat()}</span>
         </div>
       </div>
     </Link>
