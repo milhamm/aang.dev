@@ -162,7 +162,7 @@ type ExperienceCardProps = {
   }
 }
 
-export function ExperienceCard({
+function ExperienceCard({
   title,
   role,
   href,
