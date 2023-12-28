@@ -5,7 +5,7 @@ import { getAllBlogPosts } from '@/lib/blogs.server'
 export default async function BlogPage() {
   const posts = await getAllBlogPosts({ withDraft: true })
   return (
-    <Layout title='Blog'>
+    <Layout title='Blogs'>
       <BlogList posts={posts} />
     </Layout>
   )

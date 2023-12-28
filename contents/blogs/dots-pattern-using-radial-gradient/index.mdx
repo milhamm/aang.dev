@@ -1,0 +1,64 @@
+---
+title: 'Dots Pattern Using Radial Gradient'
+status: 'published'
+pallete: 'blue'
+publishedAt: '2023-12-11'
+editedAt: '2023-12-11'
+---
+
+import { SimpleGradient } from './_component/simple-gradient'
+import { RadialGradient } from './_component/radial-gradient'
+import { BackgroundRepeat } from './_component/background-repeat'
+
+## Introduction
+
+Have you ever wondered about creating the dotted pattern you see on the homepage? Well, it's actually done using a neat CSS background image gradient. In this post, I'll walk you through the steps to make that pattern yourself.
+
+## The Concept
+
+For those who don't know, this is the type of pattern that we want to achieve only using pure CSS.
+
+<SimpleGradient />
+
+The concept here is to utilize <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/radial-gradient" target='_blank' rel='noreferer noopener'>`radial-gradient`</a> background image. A radial gradient will produce a gradient in a form of a circle like this.
+
+<RadialGradient />
+
+This gradient can be achieved using this CSS code
+
+```css
+.dot {
+  background-image: radial-gradient(powderblue 20px, transparent 0px);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  background-position: center;
+}
+```
+
+The dot radius size is determined by the first value that we passed in to the `radial-gradient`. In this case, the dot is `40px` wide. As for the `50px`, it denotes the background size as I show this with the purple background.
+
+After knowing how to create a dot, the next step is to repeat those gradient. We can change the `background-repeat` value to `repeat`. In fact, `repeat` is the _default_ value for `background-repeat`.
+
+<BackgroundRepeat />
+
+```css
+.dots {
+  background-image: radial-gradient(powderblue 20px, transparent 0px);
+  background-repeat: repeat; /* or omit this declaration */
+  background-size: 50px 50px;
+  background-position: center;
+}
+```
+
+However, this is too large, we can set the dot radius size and background size even smaller.
+
+<BackgroundRepeat dot={1} size={30} />
+
+```css
+.dots {
+  background-image: radial-gradient(powderblue 1px, transparent 0px);
+  background-repeat: repeat; /* or omit this declaration */
+  background-size: 30px 30px;
+  background-position: center;
+}
+```

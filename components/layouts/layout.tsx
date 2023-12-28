@@ -7,7 +7,7 @@ type LayoutProps = React.PropsWithChildren<{
 export function Layout({ children, title }: LayoutProps) {
   return (
     <>
-      <h1 className={cn('mb-16 text-2xl font-bold')}>{title}</h1>
+      <h1 className={cn('mb-16 font-prompt text-6xl font-bold')}>{title}</h1>
       <section>{children}</section>
     </>
   )

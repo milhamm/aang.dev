@@ -21,13 +21,13 @@ export function BlogCard({ data, slug }: PostCardProps) {
       href={`/blog/${slug}`}
       className={cn(
         'relative cursor-pointer transition-all',
-        "after:absolute after:bottom-0 after:h-full after:w-full after:bg-gradient-to-t after:from-background after:from-5% after:content-['']"
+        "after:absolute after:bottom-0 after:h-full after:w-full after:rounded-xl after:bg-gradient-to-t after:from-background after:from-5% after:content-['']"
       )}
     >
-      <div className='h-[170px] rounded-xl border-2 border-border p-1 '>
+      <div className='aspect-[5/4] rounded-xl border-2 border-border p-1 '>
         <div
           className={cn(
-            'flex h-full flex-col justify-end rounded-lg bg-gradient-to-br p-4 text-sm text-white',
+            'flex h-full flex-col justify-end rounded-lg bg-gradient-to-br p-4 text-base text-foreground',
             pallete[data.color || 'blue']
           )}
         >

@@ -8,13 +8,32 @@ import { cn } from '@/lib/utils'
 
 import { ButtonThemeSwitch } from './button-theme-switch'
 
+const NAV_LINKS = [
+  {
+    href: '/',
+    name: 'Home',
+  },
+  {
+    href: '/blog',
+    name: 'Blog',
+  },
+  {
+    href: '/works',
+    name: 'Works',
+  },
+  {
+    href: '/about',
+    name: 'About',
+  },
+]
+
 export function Navbar() {
   return (
     <nav className='mx-auto mb-2 flex w-full max-w-3xl justify-between px-5 py-8 lg:mb-12'>
       <ul className='flex flex-1 items-center'>
-        <NavItem href='/' text='Home' />
-        <NavItem href='/blog' text='Blog' />
-        <NavItem href='/about' text='About' />
+        {NAV_LINKS.map(({ href, name }) => (
+          <NavItem key={href} href={href} text={name} />
+        ))}
       </ul>
       <ButtonThemeSwitch />
     </nav>
@@ -28,7 +47,7 @@ type NavItemProps = {
 
 function NavItem({ href, text }: NavItemProps) {
   const pathname = usePathname()
-  const isActive = pathname.split('/')[1] === href.replace('/', '')
+  const isActive = pathname?.split('/')[1] === href.replace('/', '')
 
   return (
     <li>
@@ -42,7 +61,7 @@ function NavItem({ href, text }: NavItemProps) {
         {isActive ? (
           <motion.span
             layoutId='hovered'
-            className='absolute inset-0 z-0 h-full w-full rounded-xl bg-neutral-200 px-3 py-1 dark:bg-gray-800 lg:px-4 lg:py-2'
+            className='absolute inset-0 z-0 h-full w-full rounded-xl bg-neutral-200 px-3 py-1 lg:px-4 lg:py-2 dark:bg-gray-800'
           />
         ) : null}
         <span className='relative z-50'>{text}</span>

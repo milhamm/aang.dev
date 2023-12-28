@@ -16,10 +16,10 @@ const Footer = () => {
           <FooterItem href='https://twitter.com/gluekol' text='Twitter' blank />
           <FooterItem href='https://www.linkedin.com/in/milhamm/' text='LinkedIn' blank />
         </FooterSection>
-        <FooterSection>
+        {/* <FooterSection>
           <FooterItem href='/slides' text='Slides' />
           <FooterItem href='/metrics' text='Metrics' />
-        </FooterSection>
+        </FooterSection> */}
       </div>
     </footer>
   )

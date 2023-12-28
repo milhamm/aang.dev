@@ -27,7 +27,7 @@ export function BlogHeader({ frontmatter }: BlogHeaderProps) {
             pallete[colorPallete || 'blue']
           )}
         >
-          <h1 className='z-10 max-w-lg font-head text-2xl font-bold lg:text-4xl'>{title}</h1>
+          <h1 className='z-10 max-w-lg font-prompt text-2xl font-bold lg:text-4xl'>{title}</h1>
           <span className='z-10 text-xs text-muted-foreground md:text-base'>
             {publishedAtFormatted.getFullFormat()}
           </span>

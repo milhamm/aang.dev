@@ -2,11 +2,12 @@ import fs from 'fs/promises'
 import matter from 'gray-matter'
 import { bundleMDX } from 'mdx-bundler'
 import path from 'path'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypePrettyCode from 'rehype-pretty-code'
 
 import { ColorPallete } from './pallete'
 
-const BLOG_DIR = path.join(process.cwd(), '/blogs')
+const BLOG_DIR = path.join(process.cwd(), '/contents/blogs')
 const FILENAME = 'index.mdx'
 
 async function getBlogEntries() {
@@ -24,11 +25,13 @@ export type MatterMetadata = {
   updatedAt: string
 }
 
-type GetBlogPost =
-  | {
-      success: true
-      data: BundleMDXReturn & { slug: string }
-    }
+export type BlogPostMDXContent = {
+  success: true
+  data: BundleMDXReturn & { slug: string }
+}
+
+export type GetBlogPost =
+  | BlogPostMDXContent
   | {
       success: false
       data: null
@@ -43,8 +46,15 @@ export async function getBlogPost(slug: string): Promise<GetBlogPost> {
       source,
       cwd: currentBlogDir,
       mdxOptions(options) {
+        options.remarkPlugins = [...(options.remarkPlugins ?? [])]
         options.rehypePlugins = [
           ...(options.rehypePlugins ?? []),
+          [
+            rehypeAutolinkHeadings,
+            {
+              behavior: 'append',
+            },
+          ],
           [
             rehypePrettyCode,
             {
