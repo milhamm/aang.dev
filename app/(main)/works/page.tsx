@@ -97,7 +97,7 @@ type WorkCardProps = React.HTMLAttributes<HTMLLIElement> & {
   href: string
 }
 
-export function WorkCard({ title, subtitle, href, className }: WorkCardProps) {
+function WorkCard({ title, subtitle, href, className }: WorkCardProps) {
   return (
     <MotionLi
       variants={item}
