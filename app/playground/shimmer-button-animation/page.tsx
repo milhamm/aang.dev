@@ -19,6 +19,19 @@ export default function PlaygroundPage() {
         <ShimmerButton />
       </div>
       <article className='prose mt-12 dark:prose-invert prose-headings:font-prompt'>
+        <h3>Links</h3>
+        <ul>
+          <li>
+            Github -{' '}
+            <a
+              href='https://github.com/milhamm/aang.dev/blob/main/app/playground/shimmer-button-animation/shimmer-button.tsx'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Code
+            </a>
+          </li>
+        </ul>
         <h3>References</h3>
         <ul>
           <li>
