@@ -33,18 +33,21 @@ export default async function Image() {
           backgroundImage: 'radial-gradient(circle at 25px 25px, lightgray 2%, transparent 0%)',
           backgroundSize: '50px 50px',
           color: 'white',
-          fontSize: 32,
+          fontSize: 80,
+          gap: '2rem',
           fontWeight: 600,
         }}
       >
-        <div style={{ marginTop: 40 }}>Shimmer Button Animation</div>
+        <div style={{ marginTop: 40, maxWidth: '700px', lineHeight: '80%' }}>
+          Shimmer Button Animation
+        </div>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <div style={{ fontSize: 18, fontWeight: 400, marginTop: 12 }}>
+          <div style={{ fontSize: 32, fontWeight: 400, marginTop: 12 }}>
             A shimmer effect on hover using conic-gradient
           </div>
           <div
             style={{
-              fontSize: 18,
+              fontSize: 32,
               fontWeight: 400,
               marginTop: 12,
               fontFamily: 'UbuntuMono',

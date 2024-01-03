@@ -1,6 +1,13 @@
+import { Metadata } from 'next'
+
 import { PlaygroundLayout } from '@/components/layouts/playground-layout'
 
 import { ShimmerButton } from './shimmer-button'
+
+export const metadata: Metadata = {
+  title: 'Shimmer Button Animation - aang.dev',
+  description: 'A shimmer effect on hover using conic-gradient',
+}
 
 export default function PlaygroundPage() {
   return (
