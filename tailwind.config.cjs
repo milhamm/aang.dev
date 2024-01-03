@@ -65,6 +65,15 @@ module.exports = {
         sm: 'calc(var(--radius) - 4px)',
       },
       keyframes: {
+        'shimmer-button': {
+          '50%': {
+            opacity: 1,
+          },
+          '100%': {
+            opacity: 0,
+            transform: 'translate(0, 0)'
+          }
+        },
         'accordion-down': {
           from: { height: 0 },
           to: { height: 'var(--radix-accordion-content-height)' },
@@ -92,6 +101,7 @@ module.exports = {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'ken-burns': 'ken-burns 1s ease-in',
         'not-so-boring': 'not-so-boring 1.2s ease-out',
+        'shimmer-button': '1.5s shimmer-button ease-in-out'
       },
     },
   },
