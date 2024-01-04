@@ -11,7 +11,7 @@ export function PlaygroundLayout({ children, title, subtitle }: PlaygroundLayout
         <h1 className='font-prompt text-4xl font-bold'>{title}</h1>
         <p className='text-lg text-muted-foreground'>{subtitle}</p>
       </header>
-      {children}
+      <div className='flex w-full flex-col'>{children}</div>
     </>
   )
 }
