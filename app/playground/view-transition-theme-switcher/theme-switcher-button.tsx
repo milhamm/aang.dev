@@ -20,6 +20,8 @@ function useThemeTransition() {
   const isDark = theme === 'dark'
 
   const toggleTheme = useCallback(() => {
+    const md = window.matchMedia('(max-width: 768px)').matches
+
     if (
       !document.startViewTransition ||
       window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -35,13 +37,16 @@ function useThemeTransition() {
     })
 
     transition.ready.then(() => {
+      const blur = md ? 4 : 10
+      const duration = md ? 500 : 700
+
       document.documentElement.animate(
         {
           clipPath: [`circle(50% at -100% 50%)`, `circle(100% at 50% 50%)`],
-          filter: [`blur(10px)`, `blur(0)`],
+          filter: [`blur(${blur}px)`, `blur(0)`],
         },
         {
-          duration: 700,
+          duration,
           easing: 'ease-out',
           pseudoElement: '::view-transition-new(root)',
         }
