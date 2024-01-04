@@ -1,25 +1,73 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useCallback } from 'react'
+import { flushSync } from 'react-dom'
 import { useTheme } from 'next-themes'
 import { Moon, SunDim } from 'lucide-react'
 
-export function ButtonThemeSwitch() {
-  const { setTheme, theme } = useTheme()
-  const [resolvedTheme, setResolvedTheme] = useState('dark')
+import { useIsMounted } from '@/lib/hooks'
 
-  useEffect(() => {
-    setResolvedTheme(theme || 'dark')
-  }, [theme])
+/*
+ CSS to disable fade-in animation
+ ::view-transition-old(root),
+ ::view-transition-new(root) {
+    animation: none;
+  }
+*/
+
+function useThemeTransition() {
+  const { setTheme, theme } = useTheme()
+  const isDark = theme === 'dark'
+
+  const toggleTheme = useCallback(() => {
+    if (
+      !document.startViewTransition ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
+      setTheme(isDark ? 'light' : 'dark')
+      return
+    }
+
+    const transition = document.startViewTransition(() => {
+      flushSync(() => {
+        setTheme(isDark ? 'light' : 'dark')
+      })
+    })
+
+    transition.ready.then(() => {
+      document.documentElement.animate(
+        {
+          clipPath: [`circle(50% at -100% 50%)`, `circle(100% at 50% 50%)`],
+          filter: [`blur(10px)`, `blur(0)`],
+        },
+        {
+          duration: 700,
+          easing: 'ease-out',
+          pseudoElement: '::view-transition-new(root)',
+        }
+      )
+    })
+  }, [setTheme, isDark])
+
+  return {
+    theme,
+    toggleTheme,
+  }
+}
+
+export function ButtonThemeSwitch() {
+  const { toggleTheme, theme } = useThemeTransition()
+  const mounted = useIsMounted()
+
+  if (!mounted) return null
 
   return (
     <button
-      className='rounded-lg bg-neutral-200 p-2 dark:bg-gray-800'
-      onClick={() => {
-        setTheme(resolvedTheme === 'light' ? 'dark' : 'light')
-      }}
+      className='rounded-xl bg-neutral-200 p-2 dark:bg-neutral-800'
+      type='button'
+      onClick={toggleTheme}
     >
-      {resolvedTheme === 'dark' ? <SunDim className='size-5' /> : <Moon className='size-5' />}
+      {theme === 'light' ? <Moon className='size-5' /> : <SunDim className='size-5' />}
     </button>
   )
 }
