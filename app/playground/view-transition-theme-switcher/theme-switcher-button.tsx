@@ -37,7 +37,7 @@ function useThemeTransition() {
     })
 
     transition.ready.then(() => {
-      const blur = md ? 4 : 10
+      const blur = md ? 2 : 10
       const duration = md ? 500 : 700
 
       document.documentElement.animate(

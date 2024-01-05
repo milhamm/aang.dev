@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import { PlaygroundLayout } from '@/components/layouts/playground-layout'
 
 import { ThemeSwitcherButton } from './theme-switcher-button'
+import { ThemeSwitcherButton2 } from './theme-switcher-button-2'
 
 export const metadata: Metadata = {
   title: 'View Transition Theme Switcher - aang.dev',
@@ -12,11 +13,22 @@ export const metadata: Metadata = {
 export default function PlaygroundPage() {
   return (
     <PlaygroundLayout
-      title='View Transition Theme Switcher'
+      title='View Transitions Theme Switcher'
       subtitle='Theme switcher animation using View Transitions API'
     >
-      <div className='mx-0 grid h-56 place-items-center rounded-lg border border-neutral-700 dots dots-neutral-700/50 md:-mx-16 md:h-96 dark:dots-neutral-700/80'>
-        <ThemeSwitcherButton />
+      <div className='mx-0 mb-6 grid h-56 grid-cols-2 place-items-center rounded-lg border border-neutral-700 dots dots-neutral-700/50 md:-mx-16 md:h-96 dark:dots-neutral-700/80'>
+        <div className='relative grid size-full place-items-center'>
+          <ThemeSwitcherButton />
+          <span className='absolute bottom-0 left-0 right-0 rounded-bl bg-foreground p-2 text-center font-mono text-xs text-background md:right-auto md:text-left'>
+            Slide In Reveal
+          </span>
+        </div>
+        <div className='relative grid size-full place-items-center'>
+          <ThemeSwitcherButton2 />
+          <span className='absolute bottom-0 left-0 right-0 rounded-br bg-foreground p-2 text-center font-mono text-xs text-background md:right-auto md:rounded-none md:text-left'>
+            Circular Reveal
+          </span>
+        </div>
       </div>
       <article className='prose mt-12 dark:prose-invert prose-headings:font-prompt'>
         <h3>Links</h3>
@@ -28,7 +40,17 @@ export default function PlaygroundPage() {
               target='_blank'
               rel='noopener noreferrer'
             >
-              Code
+              Slide in Reveal Code
+            </a>
+          </li>
+          <li>
+            Github -{' '}
+            <a
+              href='https://github.com/milhamm/aang.dev/blob/main/app/playground/view-transition-theme-switcher/theme-switcher-button-2.tsx'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Circular Reveal Code
             </a>
           </li>
         </ul>
