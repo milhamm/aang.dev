@@ -34,6 +34,26 @@ export default function WorksPage() {
           subtitle='ieeexplore.ieee.org/document/10126347'
         />
       </WorkList>
+      <WorkList year='Playground'>
+        <WorkCard
+          className='col-span-6 row-span-1 aspect-video md:col-span-3'
+          title='Kinetic Carousel'
+          href='https://www.aang.dev/playground/kinetic-carousel'
+          subtitle='See more'
+        />
+        <WorkCard
+          className='col-span-6 row-span-1 aspect-video md:col-span-3'
+          title='View Transitions Theme Switcher'
+          href='https://www.aang.dev/playground/view-transition-theme-switcher'
+          subtitle='See more'
+        />
+        <WorkCard
+          className='col-span-6 row-span-1 aspect-video md:col-span-3'
+          title='Shimmer Button Animation'
+          href='https://www.aang.dev/playground/shimmer-button-animation'
+          subtitle='See more'
+        />
+      </WorkList>
     </Layout>
   )
 }
