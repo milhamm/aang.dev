@@ -24,7 +24,7 @@ export default function WorksPage() {
         <WorkCard
           className='col-span-6 aspect-video md:col-span-3 md:aspect-[unset]'
           title='Global Energy Transition'
-          href='https://global-energy-transition.org'
+          href='https://global-energy-transition.org/bali'
           subtitle='global-energy-transition.org'
         />
         <WorkCard
@@ -36,19 +36,19 @@ export default function WorksPage() {
       </WorkList>
       <WorkList year='Playground'>
         <WorkCard
-          className='col-span-6 row-span-1 aspect-video md:col-span-3'
+          className='col-span-6 row-span-1 aspect-[4/3] md:col-span-3'
           title='Kinetic Carousel'
           href='https://www.aang.dev/playground/kinetic-carousel'
           subtitle='See more'
         />
         <WorkCard
-          className='col-span-6 row-span-1 aspect-video md:col-span-3'
+          className='col-span-6 row-span-1 aspect-[4/3] md:col-span-3'
           title='View Transitions Theme Switcher'
           href='https://www.aang.dev/playground/view-transition-theme-switcher'
           subtitle='See more'
         />
         <WorkCard
-          className='col-span-6 row-span-1 aspect-video md:col-span-3'
+          className='col-span-6 row-span-1 aspect-[4/3] md:col-span-3'
           title='Shimmer Button Animation'
           href='https://www.aang.dev/playground/shimmer-button-animation'
           subtitle='See more'
@@ -92,7 +92,7 @@ function WorkList({ children, year }: WorkListProps) {
       data-year={year}
       className={cn(
         'relative mt-24 grid w-full grid-cols-6 gap-3 before:absolute',
-        `before:-top-16 before:right-0 before:-z-10 before:font-prompt before:text-4xl before:font-black before:text-neutral-200 before:content-[attr(data-year)]`
+        `before:-top-16 before:right-0 before:-z-10 before:font-prompt before:text-4xl before:font-black before:text-zinc-600 before:content-[attr(data-year)] dark:before:text-zinc-200`
       )}
     >
       {children}
@@ -122,11 +122,13 @@ function WorkCard({ title, subtitle, href, className }: WorkCardProps) {
     <MotionLi
       variants={item}
       className={cn(
-        'flex h-full flex-col justify-end gap-2 rounded-xl border-2 border-neutral-600 bg-neutral-900 p-5',
+        'flex h-full flex-col justify-end gap-2 rounded-xl border p-5 shadow shadow-neutral-200/40 dark:border-zinc-800 dark:bg-neutral-900/30 dark:shadow-none',
         className
       )}
     >
-      <span className='text-balance font-prompt text-2xl font-bold text-neutral-100'>{title}</span>
+      <span className='text-balance font-prompt text-2xl font-bold text-zinc-800 dark:text-neutral-100'>
+        {title}
+      </span>
       <a
         href={href}
         target='_blank'

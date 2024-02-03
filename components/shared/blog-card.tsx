@@ -27,11 +27,11 @@ export function BlogCard({ data, slug }: PostCardProps) {
       <div className='aspect-[5/4] rounded-xl border-2 border-border p-1 '>
         <div
           className={cn(
-            'flex h-full flex-col justify-end rounded-lg bg-gradient-to-br p-4 text-base text-foreground',
+            'flex h-full flex-col justify-end rounded-lg bg-gradient-to-br p-4 text-base text-neutral-800 dark:text-neutral-100',
             pallete[data.color || 'blue']
           )}
         >
-          <h3 className='z-10 mb-2 line-clamp-4 font-bold'>{data.title}</h3>
+          <h3 className='z-10 mb-2 line-clamp-4 text-balance font-bold'>{data.title}</h3>
           <span className='z-10 text-xs text-muted-foreground'>{publishedAt.getShortFormat()}</span>
         </div>
       </div>
