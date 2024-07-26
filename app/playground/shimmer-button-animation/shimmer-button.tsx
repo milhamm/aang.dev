@@ -27,7 +27,7 @@ export function ShimmerButton() {
       type='button'
     >
       <span
-        className='group-hover:animate-shimmer-button absolute inset-0 -z-10 h-[600%] w-[600%] -translate-x-[80%] transform-gpu opacity-0 transition-transform'
+        className='absolute inset-0 -z-10 h-[600%] w-[600%] -translate-x-[80%] transform-gpu opacity-0 transition-transform group-hover:animate-shimmer-button'
         style={
           {
             '--first': '#F6D242',
