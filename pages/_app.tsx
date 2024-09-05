@@ -4,7 +4,6 @@ import { Inter_Tight, Nunito, Prompt } from 'next/font/google'
 import { cn } from '@/lib/utils'
 
 import { Providers } from '../app/providers'
-import { MainLayout } from '../components/layouts/main'
 
 import '../app/globals.css'
 
@@ -31,9 +30,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className={cn(nunito.variable, interTight.variable, prompt.variable, 'font-sans')}>
       <Providers>
-        <MainLayout>
-          <Component {...pageProps} />
-        </MainLayout>
+        <Component {...pageProps} />
       </Providers>
     </div>
   )

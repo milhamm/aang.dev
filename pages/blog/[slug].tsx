@@ -6,6 +6,7 @@ import { GetStaticPropsContext } from 'next'
 import { BlogHeader } from '@/components/shared/blog-header'
 import { BlogPostMDXContent, getAllBlogPosts, getBlogPost } from '@/lib/blogs.server'
 
+import { MainLayout } from '../../components/layouts/main'
 import { Heading2 } from '../../components/ui/heading'
 
 export async function getStaticProps(context: GetStaticPropsContext) {
@@ -41,7 +42,7 @@ export default function BlogDetailPage({ blog }: BlogDetailPageProps) {
   const Content = useMemo(() => getMDXComponent(code), [code])
 
   return (
-    <>
+    <MainLayout>
       <Head>
         <title>{frontmatter.title}</title>
       </Head>
@@ -53,6 +54,6 @@ export default function BlogDetailPage({ blog }: BlogDetailPageProps) {
           }}
         />
       </article>
-    </>
+    </MainLayout>
   )
 }

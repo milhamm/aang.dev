@@ -63,9 +63,10 @@ const list: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      bounce: 0,
+      type: 'tween',
+      ease: [0.76, 0, 0.24, 1],
       when: 'beforeChildren',
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
   hidden: {
