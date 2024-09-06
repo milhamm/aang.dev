@@ -1,5 +1,4 @@
 import fs from 'fs/promises'
-import matter from 'gray-matter'
 import { bundleMDX } from 'mdx-bundler'
 import path from 'path'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'

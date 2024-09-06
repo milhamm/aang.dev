@@ -1,6 +1,7 @@
 'use client'
 
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 const SlidesContext = createContext<number | null>(null)
 
@@ -12,14 +13,26 @@ export function SlidesControlProvider({
   children,
   numSlides,
 }: React.PropsWithChildren<SildesControlProviderProps>) {
-  const [activeSlide, setActiveSlide] = useState(0)
+  const router = useRouter()
+  const page = Number(router.query['page'] as string) || 0
+
+  const getCurrentPage = () => {
+    if (typeof window === 'undefined') return 0
+    const searchParams = new URLSearchParams(new URL(window.location.href).searchParams)
+    const page = Number(searchParams.get('page')) || 0
+    return page
+  }
 
   const next = () => {
-    setActiveSlide((prev) => Math.min(prev + 1, numSlides))
+    const page = getCurrentPage()
+    const url = `${router.pathname}?page=${Math.min(page + 1, numSlides)}`
+    router.push(url, url, { shallow: true })
   }
 
   const prev = () => {
-    setActiveSlide((prev) => Math.max(prev - 1, 0))
+    const page = getCurrentPage()
+    const url = `${router.pathname}?page=${Math.max(page - 1, 0)}`
+    router.push(url, url, { shallow: true })
   }
 
   useEffect(() => {
@@ -34,9 +47,10 @@ export function SlidesControlProvider({
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  return <SlidesContext.Provider value={activeSlide}>{children}</SlidesContext.Provider>
+  return <SlidesContext.Provider value={page}>{children}</SlidesContext.Provider>
 }
 
 export function useActiveSlides(): number {

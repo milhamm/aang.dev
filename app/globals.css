@@ -32,6 +32,8 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
+    --framer-accent: rgb(221, 34, 204);
+
     --radius: 0.5rem;
   }
 
@@ -63,7 +65,14 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+
+    --framer-accent: rgb(221, 34, 204);
   }
+}
+
+::selection {
+  color: #fff;
+  background: var(--framer-accent);
 }
 
 .mask-squircle {
@@ -96,4 +105,14 @@
   ::view-transition-new(root) {
     animation: none;
   }
+}
+
+.reveal-trigger:hover + span.after-text,
+.reveal-trigger[data-state="open"]:hover + span + .reveal-content[data-state="open"],
+.reveal-trigger[data-state="open"]:hover + .reveal-content[data-state="open"] {
+  color: var(--framer-accent);
+}
+
+.reveal-trigger[data-state="open"]:hover + .reveal-content[data-state="open"] .reveal-trigger {
+  border-color: var(--framer-accent);
 }

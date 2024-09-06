@@ -8,7 +8,7 @@ module.exports = {
     './app/**/*.{ts,tsx}',
     './pages/**/*.{ts,tsx}',
     './lib/**/*.{ts,tsx}',
-    './contents/**/*.{ts,tsx}',
+    './contents/**/*.{ts,tsx,mdx}',
   ],
   theme: {
     container: {
@@ -87,6 +87,11 @@ module.exports = {
           '10%': { opacity: 1, filter: 'brightness(2) blur(10px)' },
           '100%': { opacity: 1, filter: 'brightness(1) blur(0)' },
         },
+        'not-so-boring-two': {
+          '0%': { opacity: 0, filter: 'brightness(1) blur(5px)' },
+          '10%': { opacity: 1, filter: 'brightness(2) blur(2px)' },
+          '100%': { opacity: 1, filter: 'brightness(1) blur(0)' },
+        },
         'ken-burns': {
           '0%': {
             opacity: 0,
@@ -101,6 +106,7 @@ module.exports = {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'ken-burns': 'ken-burns 1s ease-in',
         'not-so-boring': 'not-so-boring 1.2s ease-out',
+        'not-so-boring-fast': 'not-so-boring-two .3s ease both',
         'shimmer-button': '1.5s shimmer-button ease-in-out',
       },
     },
