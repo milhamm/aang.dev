@@ -22,7 +22,7 @@ export function SlidesInner({ slides }: { slides: GetSlidesMDXReturn }) {
         <title>{title}</title>
       </Head>
       <motion.div
-        className='prose prose-neutral w-full max-w-7xl px-6 dark:prose-invert prose-headings:font-prompt lg:prose-h1:text-5xl lg:prose-p:text-3xl lg:prose-p:leading-10 lg:prose-li:text-3xl'
+        className='prose prose-neutral w-full max-w-6xl px-6 dark:prose-invert prose-headings:font-prompt lg:prose-h1:text-5xl lg:prose-p:text-2xl lg:prose-p:leading-10 lg:prose-li:text-2xl'
         key={activeSlide}
         initial={{ y: 20, filter: 'blur(10px)', opacity: 0 }}
         animate={{ y: 0, filter: 'blur(0)', opacity: 1 }}

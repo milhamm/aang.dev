@@ -1,0 +1,34 @@
+---
+title: 'Transition Props'
+---
+
+import { Visualizer } from '../components/visualizer'
+import { TransitionComp } from '../components/transition-comp'
+
+# Transition Props
+
+We can define different types of animation by passing a default transition to the `transition` prop.
+
+<Visualizer Comp={TransitionComp} reload={false}>
+```tsx showLineNumbers {7,14}
+import { motion } from 'framer-motion';
+
+// Tween transition
+<motion.div
+  initial={{ x: 0 }}
+  animate={{ x: 200 }}
+  transition={{ type: 'tween', ease: 'easeInOut', duration: 0.5 }}
+/>
+
+// Spring transition
+<motion.div
+  initial={{ x: 0 }}
+  animate={{ x: 200 }}
+  transition={{ type: 'spring', duration: 0.5, bounce: 0.2 }}
+/>
+```
+</Visualizer>
+
+## Defaults
+- Physical properties like `x` or `scale` will be animated via a _spring simulation_.
+- Properties like `opacity` or `color` will be animated with a _tween_.

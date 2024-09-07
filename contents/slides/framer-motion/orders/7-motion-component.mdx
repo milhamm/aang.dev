@@ -1,0 +1,24 @@
+---
+title: 'Motion Component'
+---
+
+import { Visualizer } from '../components/visualizer'
+import { MotionComp } from '../components/motion-comp'
+
+# Motion Component
+
+To animate declaratively with Framer Motion we need to use the `motion` element.
+
+<Visualizer Comp={MotionComp}>
+```tsx showLineNumbers
+import { motion } from 'framer-motion';
+
+<motion.div
+  initial={{ opacity: 0, x: 100 }}
+  animate={{ opacity: 1, x: 0 }}
+/>
+```
+</Visualizer>
+
+- Animation is interpolated using Javascript
+- Animation runs outside of React's render cycle

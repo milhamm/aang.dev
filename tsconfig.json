@@ -34,7 +34,7 @@
         "**/*.ts",
         "**/*.tsx",
         ".next/types/**/*.ts",
-        "contents/slides/framer-motion/orders/5-framer-motion.mdx"
+        "contents/slides/framer-motion/orders/6-framer-motion.mdx"
     ],
     "exclude": ["node_modules"]
 }
