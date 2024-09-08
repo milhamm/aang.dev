@@ -4,6 +4,9 @@ import { motion } from 'framer-motion'
 import { getMDXComponent } from 'mdx-bundler/client'
 
 import { GetSlidesMDXReturn } from '@/lib/slides.server'
+import { cn } from '@/lib/utils'
+
+import { Link } from '../../ui'
 
 import { useActiveSlides } from './slides-control-provider'
 import { SlidesWrapper } from './slides-wrapper'
@@ -22,14 +25,22 @@ export function SlidesInner({ slides }: { slides: GetSlidesMDXReturn }) {
         <title>{title}</title>
       </Head>
       <motion.div
-        className='prose prose-neutral w-full max-w-6xl px-6 dark:prose-invert prose-headings:font-prompt lg:prose-h1:text-5xl lg:prose-p:text-2xl lg:prose-p:leading-10 lg:prose-li:text-2xl'
+        className={cn(
+          'prose prose-neutral w-full max-w-6xl px-6 dark:prose-invert prose-headings:font-prompt md:prose-p:text-lg md:prose-li:text-lg lg:prose-p:leading-10',
+          'xl:prose-h1:text-4xl xl:prose-h2:text-3xl',
+          '2xl:prose-p:text-xl 2xl:prose-li:text-xl'
+        )}
         key={activeSlide}
         initial={{ y: 20, filter: 'blur(10px)', opacity: 0 }}
         animate={{ y: 0, filter: 'blur(0)', opacity: 1 }}
         exit={{ y: -40, filter: 'blur(10px)', opacity: 0 }}
         transition={{ duration: 0.2, type: 'tween', ease: ['easeOut'] }}
       >
-        <Content />
+        <Content
+          components={{
+            a: Link as any,
+          }}
+        />
       </motion.div>
     </SlidesWrapper>
   )

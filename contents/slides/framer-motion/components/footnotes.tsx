@@ -1,6 +1,13 @@
-export function Footnotes({ children }: React.PropsWithChildren) {
+import { cn } from '../../../../lib/utils'
+
+export function Footnotes({
+  children,
+  className,
+}: React.PropsWithChildren<{ className?: string }>) {
   return (
-    <footer className='fixed mt-11 w-full text-center text-xs text-muted-foreground'>
+    <footer
+      className={cn('fixed mt-11 w-full text-center text-xs text-muted-foreground', className)}
+    >
       {children}
     </footer>
   )

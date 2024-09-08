@@ -1,0 +1,41 @@
+---
+title: "Layout Animations"
+---
+
+import { Footnotes } from '../components/footnotes'
+import { Visualizer } from '../components/visualizer'
+import { LayoutAnimation } from '../components/layout-animation'
+
+# Layout Animations
+
+Animate a `motion` component between distinct _layouts_ by setting the `layout` prop to `true`.
+This will result in what we call a layout animation. For example:
+
+<Visualizer Comp={LayoutAnimation} reload={false}>
+```tsx showLineNumbers {11}
+import { motion } from 'framer-motion'
+
+<div
+  style={{
+    display: 'flex',
+    flexDirection: isColumn ? 'column' : 'row'
+  }}
+>
+  {items.map((item) => (
+    <motion.div
+      layout
+      key={item}
+    >
+      {item}
+    </motion.div>
+  ))}
+</div>
+```
+</Visualizer>
+
+## But why not normal CSS?
+1. [Not all CSS property are animatable](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties) e.g `flex-direction`
+2. CSS layouts are difficult and [expensive to animate](https://web.dev/articles/animations-overview).
+
+
+<Footnotes className='text-left'>Read more: <a href="https://www.framer.com/motion/layout-animations/" target='_blank'>Framer Motion: Layout Animations</a> | <a href='https://www.nan.fyi/magic-motion' target='_blank'>Nanda Syahrasyad: Inside Framer's Magic Motion</a> | <a href='https://blog.maximeheckel.com/posts/framer-motion-layout-animations/'>Maxime Heckel: Everything about Framer Motion layout animations</a></Footnotes>

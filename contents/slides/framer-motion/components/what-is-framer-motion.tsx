@@ -4,7 +4,7 @@ type TextRevealProps = {
   beforeText?: string
   afterText?: string
   triggerName: string
-  content: string
+  content: React.ReactNode
   children?: React.ReactNode
 }
 
@@ -14,7 +14,7 @@ function TextReveal({ beforeText, afterText, triggerName, content, children }: T
       {beforeText ? <span>{beforeText} </span> : null}
       <Collapsible.Root asChild>
         <span>
-          <Collapsible.Trigger className='reveal-trigger cursor-help rounded-xl border border-foreground px-3 text-2xl hover:border-[var(--framer-accent)] hover:bg-[var(--framer-accent)] hover:text-background'>
+          <Collapsible.Trigger className='reveal-trigger cursor-help rounded-xl border border-foreground px-1 hover:border-[var(--framer-accent)] hover:bg-[var(--framer-accent)] hover:text-background md:text-base xl:px-3 xl:text-2xl'>
             {triggerName}
           </Collapsible.Trigger>
           {afterText ? <span className='after-text'> {afterText} </span> : null}
@@ -35,12 +35,9 @@ function TextReveal({ beforeText, afterText, triggerName, content, children }: T
   )
 }
 
-// So, to make animation as easy as possible,
-// the primary design philosophy of Framer Motion was, and continues to be, simplicity.
-
 export function WhatIsFramerMotion() {
   return (
-    <div className='w-full text-center text-3xl font-light leading-relaxed tracking-tight'>
+    <div className='w-full text-center font-light tracking-tight md:text-xl md:leading-loose xl:text-3xl xl:leading-relaxed'>
       <TextReveal
         triggerName='Framer Motion'
         afterText='is a React-based animation library'
@@ -81,6 +78,17 @@ export function WhatIsFramerMotion() {
       <TextReveal
         triggerName='Scroll-linked Animations'
         content="that control animations based on the user's scroll position, enabling creative scroll-triggered effects."
+      ></TextReveal>
+      <TextReveal
+        triggerName='And much more'
+        content={
+          <span>
+            to explore, check out the{' '}
+            <a href='https://framer.com/motion/' target='_blank' rel='noopener noreferer'>
+              Framer Motion Docs
+            </a>
+          </span>
+        }
       ></TextReveal>
     </div>
   )
