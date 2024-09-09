@@ -1,5 +1,6 @@
 import { ButtonThemeSwitch } from '@/components/layouts/button-theme-switch'
 import { BackgroundNoise } from '@/components/shared/slides/background-noise'
+import { NavigationMenu } from '@/components/shared/slides/navigation-menu'
 import { SlidesControlProvider } from '@/components/shared/slides/slides-control-provider'
 import { SlidesInner } from '@/components/shared/slides/slides-inner'
 import { getSlides, GetSlidesMDXReturn } from '@/lib/slides.server'
@@ -23,6 +24,7 @@ export default function FramerMotionSlides({ slides }: { slides: GetSlidesMDXRet
         <ButtonThemeSwitch />
       </header>
       <BackgroundNoise />
+      <NavigationMenu slideKey={KEY} totalSlides={slides.length} />
       <SlidesInner slides={slides} />
     </SlidesControlProvider>
   )
