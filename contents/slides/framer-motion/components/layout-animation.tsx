@@ -23,8 +23,9 @@ export function LayoutAnimation() {
       >
         {items.map((item) => (
           <motion.div
+            id={item.split(' ').join('').toLowerCase()}
             layout={isLayout}
-            className='rounded-lg bg-gradient-to-r from-pink-500 to-pink-700 px-3 py-1 font-prompt'
+            className='rounded-lg border border-pink-800/50 bg-gradient-to-r from-pink-600/10 to-pink-700/40 px-3 py-1 font-prompt'
             key={item}
           >
             {item}

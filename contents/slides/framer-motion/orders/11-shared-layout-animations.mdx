@@ -1,5 +1,35 @@
 ---
-title: "Layout Animations"
+title: "Shared Layout Animations"
 ---
 
+import { Footnotes } from '../components/footnotes'
+import { Visualizer } from '../components/visualizer'
+import { SharedLayoutAnimation } from '../components/shared-layout-animation'
+import { SharedLayoutAnimation2 } from '../components/shared-layout-animation-2'
+
 # Shared Layout Animations
+
+When a new component is added that has a `layoutId` prop that matches an existing component, it will automatically animate out from the old component.
+
+<Visualizer Comp={SharedLayoutAnimation} reload={false}>
+```tsx showLineNumbers {6}
+import { motion } from 'framer-motion'
+
+<ul>
+  {items.map((item) => (
+    <li key={item} className="relative">
+      {isSelectedTabs && <motion.div layoutId="tabIndicator" />}
+      <span>{item}</span>
+    </li>
+  ))}
+</ul>
+```
+</Visualizer>
+
+### Another example
+
+With shared layout animations, we can effortlessly connect two elements, enabling a fluid transition between them.
+
+<SharedLayoutAnimation2 />
+
+<Footnotes className='text-left'>Read more: <a href="https://www.framer.com/motion/layout-animations/#shared-layout-animations" target='_blank'>Framer Motion: Shared Layout Animations</a></Footnotes>

@@ -32,6 +32,15 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <Providers>
         <Component {...pageProps} />
       </Providers>
+      <style jsx global>
+        {`
+          :root {
+            --font-brand: ${nunito.style.fontFamily};
+            --font-head: ${interTight.style.fontFamily};
+            --font-prompt: ${prompt.style.fontFamily};
+          }
+        `}
+      </style>
     </div>
   )
 }
