@@ -10,4 +10,12 @@ module.exports = {
       },
     ],
   },
+  rewrites: async () => {
+    return [
+      {
+        source: '/framer-motion',
+        destination: '/slides/framer-motion',
+      },
+    ]
+  },
 }

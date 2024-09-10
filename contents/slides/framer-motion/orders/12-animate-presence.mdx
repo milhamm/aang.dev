@@ -2,4 +2,47 @@
 title: "Animate Presence"
 ---
 
+import { Visualizer } from '../components/visualizer'
+import { AnimatePresenceComp } from '../components/animate-presence'
+
 # Animate Presence
+
+`AnimatePresence` allows components to have exit animations when they're removed from the React tree.
+
+<Visualizer Comp={AnimatePresenceComp} reload={false}>
+```tsx showLineNumbers title="basic-animate-presence.tsx" {9}
+import { AnimatePresence, motion } from 'framer-motion'
+
+// Basic usage
+<AnimatePresence>
+  {isShown && (
+    <motion.div
+      initial={{ opacity: 0, x: 100 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -100 }}
+    />
+  )}
+</AnimatePresence>
+```
+
+```tsx showLineNumbers title="slideshow.tsx" {6}
+import { AnimatePresence, motion } from 'framer-motion'
+
+// Slideshow usage
+<AnimatePresence mode="wait">
+  <motion.div
+    key={`slide-${activeSlide}`}
+    initial={{ y: 20, filter: 'blur(10px)', opacity: 0 }}
+    animate={{ y: 0, filter: 'blur(0)', opacity: 1 }}
+    exit={{ y: -40, filter: 'blur(10px)', opacity: 0 }}
+  >
+    <SlideContent content={content[activeslide]} />
+  </motion.div>
+</AnimatePresence>
+```
+</Visualizer>
+
+## Modes
+- `sync` (Default) Children animate in/out as soon as they're added/removed.
+- `wait` The entering child will wait until the exiting child has animated out.
+- `popLayout` Exiting children will be "popped" out of the page layout. This allows surrounding elements to move to their new layout immediately.

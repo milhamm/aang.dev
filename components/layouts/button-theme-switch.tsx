@@ -38,10 +38,14 @@ function useThemeTransition() {
       document.documentElement.animate(
         {
           clipPath: [`circle(50% at -100% 50%)`, `circle(100% at 50% 50%)`],
+          // clipPath: [
+          //   `polygon(0 0, -20% 0, 0 100%, 0 100%)`,
+          //   `polygon(0 0, 120% 0, 100% 100%, 0 100%)`,
+          // ],
           filter: [`blur(10px)`, `blur(0)`],
         },
         {
-          duration: 700,
+          duration: 800,
           easing: 'ease-out',
           pseudoElement: '::view-transition-new(root)',
         }

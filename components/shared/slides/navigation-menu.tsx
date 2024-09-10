@@ -2,15 +2,19 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import * as RadixNavMenu from '@radix-ui/react-navigation-menu'
+import { motion } from 'framer-motion'
 
 import { cn } from '@/lib/utils'
 
 import { useActiveSlides } from './slides-control-provider'
 
-const PREVIEW_WIDTH = 340
-const PREVIEW_HEIGHT = 208
+const PREVIEW_WIDTH = 240
+const PREVIEW_HEIGHT = 150
 
-type NavigationMenuProps = { slideKey: string; totalSlides: number }
+type NavigationMenuProps = {
+  slideKey: string
+  totalSlides: number
+}
 
 export function NavigationMenu({ slideKey, totalSlides }: NavigationMenuProps) {
   const activeSlide = useActiveSlides()
@@ -31,8 +35,8 @@ export function NavigationMenu({ slideKey, totalSlides }: NavigationMenuProps) {
         {
           '--preview-width': `${PREVIEW_WIDTH}px`,
           '--preview-height': `${PREVIEW_HEIGHT}px`,
-          '--trigger-width': '64px',
-          '--trigger-height': '64px',
+          '--trigger-width': '48px',
+          '--trigger-height': '48px',
         } as React.CSSProperties
       }
     >
@@ -46,20 +50,22 @@ export function NavigationMenu({ slideKey, totalSlides }: NavigationMenuProps) {
               asChild
             >
               <Link href={`/slides/${slideKey}?page=${i}`} shallow>
-                <div
-                  className={cn(
-                    'mx-1 h-0.5 w-full bg-foreground/40',
-                    i === activeSlide && 'bg-foreground'
+                <div className={cn('mx-1 h-0.5 w-full bg-foreground/40')}>
+                  {i === activeSlide && (
+                    <motion.div
+                      layoutId='navActiveIndicator'
+                      className='size-full bg-foreground'
+                    ></motion.div>
                   )}
-                ></div>
+                </div>
               </Link>
             </RadixNavMenu.Trigger>
             <div className='hidden'>
               <RadixNavMenu.Content
                 forceMount
-                className='w-full flex-none transition-transform'
+                className='w-full flex-none transition-transform duration-500'
                 style={{
-                  transform: `translateX(calc(-1*${offset}*var(--preview-width)))`,
+                  transform: `translateX(calc(-1 * ${offset} * var(--preview-width)))`,
                 }}
               >
                 <RadixNavMenu.Link asChild>
@@ -68,7 +74,7 @@ export function NavigationMenu({ slideKey, totalSlides }: NavigationMenuProps) {
                       src={`/slides/${slideKey}/${i}.jpg`}
                       width={PREVIEW_WIDTH}
                       height={PREVIEW_HEIGHT}
-                      alt='Slides'
+                      alt='Slides Preview'
                       className='h-full rounded-md border-2 border-white object-cover'
                       loading='eager'
                     />
@@ -80,9 +86,9 @@ export function NavigationMenu({ slideKey, totalSlides }: NavigationMenuProps) {
         ))}
       </RadixNavMenu.List>
       <div
-        className='absolute left-0 transition-transform'
+        className='absolute left-0 transition-transform duration-500'
         style={{
-          top: 'calc(-100% - var(--trigger-height) * 2 - 1rem)',
+          top: 'calc(-1 * var(--preview-height))',
           transform: `translateX(calc(${offset} * var(--trigger-width)))`,
         }}
       >

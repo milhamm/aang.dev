@@ -159,3 +159,18 @@ code[data-line-numbers] > [data-line]:before {
   --tw-border-opacity: 1;
   border-left-color: rgb(96 165 250 / var(--tw-border-opacity));
 }
+
+[data-rehype-pretty-code-title] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(63 63 70 / var(--tw-bg-opacity));
+  padding: 0.5rem 0.75rem;
+  font-size: 0.7rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  text-align: left;
+  margin: 0.8rem 0.8rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  color: rgb(228 228 231 / var(--tw-text-opacity));
+}
