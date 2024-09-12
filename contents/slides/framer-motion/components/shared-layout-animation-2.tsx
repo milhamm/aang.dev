@@ -29,24 +29,28 @@ function HeadingContent({ variant, className, ...rest }: HeadingContentProps) {
       className={cn(headingContentVariants({ variant, className }))}
       {...rest}
     >
-      <motion.div layout className='absolute inset-0'>
+      <motion.div layout='preserve-aspect' className='absolute inset-0'>
         <motion.img
           layoutId='image'
           src='/images/raycast-wp-1.jpg'
           alt='Raycast Wallpaper'
-          className='!m-0 w-full object-cover object-center'
+          className={cn('relative !m-0 block w-full object-cover object-center')}
         />
+        <motion.div
+          layoutId='bg-gradient'
+          className='absolute inset-0 -bottom-6 rounded-xl bg-gradient-to-t from-black from-5%'
+        ></motion.div>
       </motion.div>
 
-      <div className={cn('w-full', variant === 'default' ? 'm-8' : 'm-4')}>
+      <div className={cn(variant === 'default' ? 'm-8' : 'm-4')}>
         <motion.h1
           layoutId='title'
           className={cn(
-            'relative font-prompt text-white',
+            'relative font-prompt text-4xl font-bold text-white',
             variant === 'default' ? 'text-4xl font-bold' : '!mb-0 !text-lg'
           )}
         >
-          Raycast Wallpaper 1
+          Raycast Wallpaper
         </motion.h1>
         <motion.p
           layoutId='description'
@@ -55,14 +59,14 @@ function HeadingContent({ variant, className, ...rest }: HeadingContentProps) {
             variant === 'default' ? 'mt-4 text-lg' : '!mb-0 mt-2 !text-sm'
           )}
         >
-          Example of shared layout animations
+          Wallpaper is generated using shader
         </motion.p>
       </div>
     </motion.div>
   )
 }
 
-export function SharedLayoutAnimation2() {
+export function SharedLayoutAnimation2({ className = 'grid grid-cols-3' }: { className?: string }) {
   const [active, setActive] = useState(false)
   const ref = useRef(null)
   useOnClickOutside(ref, () => setActive(false))
@@ -122,7 +126,7 @@ export function SharedLayoutAnimation2() {
           </Portal.Root>
         )}
       </AnimatePresence>
-      <div className='grid grid-cols-3' key={`${active}`}>
+      <div className={className} key={`${active}`}>
         <motion.div layoutId='bg' className='w-full max-w-4xl rounded-xl bg-background p-1'>
           <HeadingContent
             tabIndex={0}
