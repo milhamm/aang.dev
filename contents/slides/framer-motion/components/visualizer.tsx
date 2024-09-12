@@ -18,10 +18,10 @@ export function Visualizer({ children, Comp, reload = true, className }: Visuali
         className
       )}
     >
-      <div className='relative flex flex-1 flex-col gap-1 overflow-scroll bg-neutral-900'>
+      <div className='relative flex flex-[1_1_50%] flex-col gap-1 overflow-scroll bg-neutral-900'>
         {children}
       </div>
-      <div className='my-10 flex flex-1 flex-col items-center justify-center gap-4'>
+      <div className='my-10 flex flex-[1_1_50%] flex-col items-center justify-center gap-4'>
         <Comp key={key} />
         {reload ? (
           <Button variant='secondary' onClick={() => setKey((k) => k + 1)}>

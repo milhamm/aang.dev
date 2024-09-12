@@ -25,7 +25,7 @@ export function NavigationMenu({ slideKey, totalSlides }: NavigationMenuProps) {
 
   return (
     <RadixNavMenu.Root
-      className='fixed bottom-0 left-6 z-50'
+      className='fixed bottom-2 left-6 z-50'
       value={value}
       onValueChange={(val) => {
         setPrevVal(value)
@@ -35,8 +35,8 @@ export function NavigationMenu({ slideKey, totalSlides }: NavigationMenuProps) {
         {
           '--preview-width': `${PREVIEW_WIDTH}px`,
           '--preview-height': `${PREVIEW_HEIGHT}px`,
-          '--trigger-width': '48px',
-          '--trigger-height': '48px',
+          '--trigger-width': '30px',
+          '--trigger-height': '30px',
         } as React.CSSProperties
       }
     >
@@ -50,7 +50,7 @@ export function NavigationMenu({ slideKey, totalSlides }: NavigationMenuProps) {
               asChild
             >
               <Link href={`/slides/${slideKey}?page=${i}`} shallow>
-                <div className={cn('mx-1 h-0.5 w-full bg-foreground/40')}>
+                <div className={cn('mx-0.5 h-0.5 w-full bg-foreground/40')}>
                   {i === activeSlide && (
                     <motion.div
                       layoutId='navActiveIndicator'
