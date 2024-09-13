@@ -1,0 +1,31 @@
+---
+title: "Scroll-triggered Animations"
+---
+
+import { Visualizer } from '../components/visualizer'
+import { ScrollTriggeredAnimations } from '../components/scroll-triggered-animations'
+import { Footnotes } from '../components/footnotes'
+
+# Scroll-triggered Animations
+
+The `whileInView` prop can be used to create scroll-triggered animations
+
+<Visualizer Comp={ScrollTriggeredAnimations} reload={false}>
+```tsx showLineNumbers {5, 10-11}
+import { motion } from 'framer-motion'
+
+<motion.div
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+/>
+
+<motion.div
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ amount: 0.8, once: true }}
+/>
+
+```
+</Visualizer>
+
+<Footnotes className='text-left'>Read more: <a href="https://www.framer.com/motion/scroll-animations/#scroll-triggered-animations" target="_blank">Framer Motion: Scroll-triggered Animations</a></Footnotes>

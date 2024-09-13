@@ -4,17 +4,19 @@ title: "Scroll-linked Animations"
 
 import { Visualizer } from '../components/visualizer'
 import { ScrollLinkedAnimations } from '../components/scroll-linked-animations'
+import { Footnotes } from '../components/footnotes'
 
 # Scroll-linked Animations
 
 Scroll-linked animations are created using motion values and the `useScroll` hook.
 
 <Visualizer Comp={ScrollLinkedAnimations} reload={false}>
-```tsx showLineNumbers
+```tsx showLineNumbers {6, 8-12}
 import { useRef } from 'react'
 import { useScroll, useTransform } from 'framer-motion'
 
 const scrollTargetRef = useRef(null)
+
 const { scrollYProgress } = useScroll({ target: scrollTargetRef })
 
 const rotate = useTransform(
@@ -37,3 +39,4 @@ const rotate = useTransform(
 
 `useScroll` + `useTransform` + `sticky` = `awwwards`
 
+<Footnotes className='text-left'>Read more: <a href="https://www.framer.com/motion/use-scroll/" target="_blank">Framer Motion: useScroll</a></Footnotes>
