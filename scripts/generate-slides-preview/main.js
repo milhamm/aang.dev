@@ -17,7 +17,7 @@ function delay(time) {
   })
 }
 
-(async () => {
+;(async () => {
   // Launch the browser and open a new blank page
   const browser = await puppeteer.launch({ headless: false })
 
