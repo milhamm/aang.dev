@@ -79,6 +79,17 @@ export default function AboutPage() {
             }}
           />
           <ExperienceCard
+            title='Revou'
+            role='Software Engineer Mentor'
+            href='https://revou.co/'
+            year='Apr 2024 — Jun 2024'
+            alt='Revou Logo'
+            logo='/icons/revou.jpg'
+            classnames={{
+              image: 'bg-[#fde900]',
+            }}
+          />
+          <ExperienceCard
             title='Shumi'
             role='Frontend Engineer'
             href='https://shumi.shop/'

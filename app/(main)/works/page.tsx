@@ -28,6 +28,18 @@ export default function WorksPage() {
           subtitle='global-energy-transition.org'
         />
         <WorkCard
+          className='col-span-6 row-span-2 aspect-video md:col-span-4'
+          title='Raharja Energi Cepu'
+          href='https://rec.co.id'
+          subtitle='rec.co.id'
+        />
+        <WorkCard
+          className='col-span-6 row-span-2 aspect-video md:col-span-2 md:aspect-[unset]'
+          title='Slides: Framer Motion'
+          href='https://aang.dev/framer-motion'
+          subtitle='aang.dev/framer-motion'
+        />
+        <WorkCard
           className='col-span-6 aspect-video'
           title='Tourism Route Recommendation Using Reinforcement Learning'
           href='https://ieeexplore.ieee.org/document/10126347'
