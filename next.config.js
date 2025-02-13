@@ -16,6 +16,10 @@ module.exports = {
         source: '/framer-motion',
         destination: '/slides/framer-motion',
       },
+      {
+        source: '/motion',
+        destination: '/slides/motion',
+      },
     ]
   },
 }

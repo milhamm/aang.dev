@@ -1,0 +1,32 @@
+---
+title: "Scroll-triggered Animations"
+---
+
+import { Visualizer } from '../components/visualizer'
+import { ScrollTriggeredAnimations } from '../components/scroll-triggered-animations'
+import { Footnotes } from '../components/footnotes'
+
+# Motion: Scroll-triggered Animations
+
+The `inView` function can be used to create scroll-triggered animations
+
+<Visualizer Comp={ScrollTriggeredAnimations} reload={false}>
+```tsx showLineNumbers
+import { animate, inView } from 'motion'
+
+inView(".section", (element) => {
+  animate(
+    element,
+    { opacity: 1, x: [-100, 0] },
+    {
+      duration: 0.9,
+      easing: [0.17, 0.55, 0.55, 1],
+    }
+  )
+  return () => animate(element, { opacity: 0, x: -100 })
+})
+
+```
+</Visualizer>
+
+<Footnotes className='text-left'>Read more: <a href="https://motion.dev/docs/inview" target="_blank">Motion: inView</a></Footnotes>

@@ -1,0 +1,42 @@
+---
+title: "Scroll-linked Animations"
+---
+
+import { Visualizer } from '../components/visualizer'
+import { ScrollLinkedAnimations } from '../components/scroll-linked-animations'
+import { Footnotes } from '../components/footnotes'
+
+# Motion React: Scroll-linked Animations
+
+Scroll-linked animations are created using motion values and the `useScroll` hook.
+
+<Visualizer Comp={ScrollLinkedAnimations} reload={false}>
+```tsx showLineNumbers {6, 8-12}
+import { useRef } from 'react'
+import { useScroll, useTransform } from 'motion/react'
+
+const scrollTargetRef = useRef(null)
+
+const { scrollYProgress } = useScroll({ target: scrollTargetRef })
+
+const rotate = useTransform(
+  scrollYProgress,   // Input: The scroll progress
+  [0, 1],            // Input range: 0 (top of the target) to 1 (bottom of the target)
+  [0, 360]           // Output range: rotate from 0 degrees to 360 degrees
+)
+                     // Example: When scroll progress reach 0.5,
+                     // then the rotation would be 180 degress
+
+// This is the scroll target
+<div ref={scrollTargetRef}>
+    <motion.div style={{ rotate }}>
+      I'm rotating as you scroll!
+    </motion.div>
+</div>
+
+```
+</Visualizer>
+
+`useScroll` + `useTransform` + `sticky` = `awwwards`
+
+<Footnotes className='text-left'>Read more: <a href="https://motion.dev/docs/react-use-scroll" target="_blank">Motion: useScroll</a></Footnotes>
