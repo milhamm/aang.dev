@@ -23,6 +23,7 @@ module.exports = {
         sans: ['var(--font-brand)', ...fontFamily.sans],
         head: ['var(--font-head)', ...fontFamily.sans],
         prompt: ['var(--font-prompt)', ...fontFamily.sans],
+        bricolage: ['var(--font-bricolage)', ...fontFamily.sans],
       },
       colors: {
         border: 'hsl(var(--border))',

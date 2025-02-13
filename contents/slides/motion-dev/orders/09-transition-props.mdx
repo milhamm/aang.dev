@@ -1,0 +1,44 @@
+---
+title: 'Transition'
+---
+
+import { Visualizer } from '../components/visualizer'
+import { TransitionComp } from '../components/transition-comp'
+import { Footnotes } from '../components/footnotes'
+
+# Transition
+
+We can define different types of animation by changing the tranisiton type.
+
+<Visualizer Comp={TransitionComp} reload={false}>
+```tsx showLineNumbers {4,6,14,20}
+import { animate } from 'motion';
+
+// Tween transition
+animate('.box', { x: [0, 200] }, { type: 'tween', ease: 'easeInOut', duration: 0.5 })
+// Spring transition
+animate('.box', { x: [0, 200] }, { type: 'spring', duration: 0.5, bounce: 0.2 })
+
+// React
+import { motion } from 'motion/react';
+// Tween transition
+<motion.div
+  initial={{ x: 0 }}
+  animate={{ x: 200 }}
+  transition={{ type: 'tween', ease: 'easeInOut', duration: 0.5 }}
+/>
+// Spring transition
+<motion.div
+  initial={{ x: 0 }}
+  animate={{ x: 200 }}
+  transition={{ type: 'spring', duration: 0.5, bounce: 0.2 }}
+/>
+```
+</Visualizer>
+
+## Defaults
+
+- Physical properties like `x` or `scale` will be animated via a _spring simulation_.
+- Properties like `opacity` or `color` will be animated with a _tween_.
+
+<Footnotes className='text-left'>Read more: <a href='https://developer.apple.com/videos/play/wwdc2023/10158/' target='_blank'>WWDC23: Animate with springs</a> | <a href='https://www.joshwcomeau.com/animation/a-friendly-introduction-to-spring-physics/' target='_blank'>Josh W. Comeau: A Friendly Introduction to Spring Physics</a></Footnotes>

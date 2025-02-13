@@ -1,0 +1,30 @@
+---
+title: "Scroll-linked Animations"
+---
+
+import { Visualizer } from '../components/visualizer'
+import { ScrollLinkedAnimations } from '../components/scroll-linked-animations'
+import { Footnotes } from '../components/footnotes'
+
+# Motion: Scroll-linked Animations
+
+Motion uses browser APIs for hardware accelerated scroll-linked and scroll-linked animations.
+
+<Visualizer Comp={ScrollLinkedAnimations} reload={false}>
+```tsx showLineNumbers {3-5}
+import { animate, scroll } from 'motion'
+
+scroll(animate(".box", { rotate: [0, 360] }, { ease: "linear" }), {
+  target: '#container'
+})
+
+<div id="container">
+    <div class="box" style="position: sticky">
+      I'm rotating as you scroll!
+    </div>
+</div>
+
+```
+</Visualizer>
+
+<Footnotes className='text-left'>Read more: <a href="https://motion.dev/docs/scroll" target="_blank">Motion: Scroll</a></Footnotes>

@@ -1,0 +1,58 @@
+---
+title: 'Motion React: Variants'
+---
+
+import { Visualizer } from '../components/visualizer'
+import { VariantsComp } from '../components/variants'
+import { Footnotes } from '../components/footnotes'
+
+# Motion React: Variants
+
+A way to create reusable, orchestrated complex animations throughout a component tree.
+
+<Visualizer Comp={VariantsComp}>
+```tsx showLineNumbers {24-26,32}
+import { motion, Variants } from 'motion/react'
+
+const containerVariants: Variants = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
+    },
+  },
+}
+
+const itemVariants: Variants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+}
+
+<motion.div
+  initial='hidden'
+  animate='visible'
+  variants={containerVariants}
+>
+  {items.map((item, i) => {
+    return (
+      <motion.div
+        key={i}
+        variants={itemVariants}
+      />
+    )
+  })}
+</motion.div>
+```
+</Visualizer>
+
+## Propagation
+
+If a `motion` component has children, changes in variant will flow down through the component hierarchy until a child component defines its own `animate` property.
+
+<Footnotes className='text-left'>Read more: <a href="https://motion.dev/docs/react-animation#variants" target='_blank'>Motion: Variants</a></Footnotes>

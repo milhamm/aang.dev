@@ -33,6 +33,7 @@
     --ring: 222.2 84% 4.9%;
 
     --framer-accent: rgb(221, 34, 204);
+    --motion-accent: #fde900;
 
     --radius: 0.5rem;
   }
@@ -110,11 +111,21 @@
 .reveal-trigger:hover + span.after-text,
 .reveal-trigger[data-state="open"]:hover + span + .reveal-content[data-state="open"],
 .reveal-trigger[data-state="open"]:hover + .reveal-content[data-state="open"] {
-  color: var(--framer-accent);
+  color: var(--motion-accent);
 }
 
 .reveal-trigger[data-state="open"]:hover + .reveal-content[data-state="open"] .reveal-trigger {
-  border-color: var(--framer-accent);
+  border-color: var(--motion-accent);
+}
+
+.reveal-trigger:focus + span.after-text,
+.reveal-trigger[data-state="open"]:focus + span + .reveal-content[data-state="open"],
+.reveal-trigger[data-state="open"]:focus + .reveal-content[data-state="open"] {
+  color: var(--motion-accent);
+}
+
+.reveal-trigger[data-state="open"]:focus + .reveal-content[data-state="open"] .reveal-trigger {
+  border-color: var(--motion-accent);
 }
 
 [data-rehype-pretty-code-title] {

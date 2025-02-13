@@ -1,0 +1,31 @@
+---
+title: 'Animating Component'
+---
+
+import { Visualizer } from '../components/visualizer'
+import { MotionComp } from '../components/motion-comp'
+
+# Simple Animation
+
+To animate with Motion we need to use the `animate` for Vanilla JS or `motion` for React components.
+
+<Visualizer Comp={MotionComp}>
+```tsx showLineNumbers
+// Vanilla JS
+import { animate } from 'motion';
+
+animate('.box', { opacity: [0, 1], x: [100, 0] })
+
+// React
+import { motion } from 'motion/react';
+
+<motion.div
+  initial={{ opacity: 0, x: 100 }}
+  animate={{ opacity: 1, x: 0 }}
+/>
+
+```
+</Visualizer>
+
+- Animation is interpolated using JavaScript
+- React: Animation runs outside of React's render cycle

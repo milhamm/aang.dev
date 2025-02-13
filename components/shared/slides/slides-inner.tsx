@@ -11,13 +11,19 @@ import { Link } from '../../ui'
 import { useActiveSlides } from './slides-control-provider'
 import { SlidesWrapper } from './slides-wrapper'
 
-export function SlidesInner({ slides }: { slides: GetSlidesMDXReturn }) {
+export function SlidesInner({
+  slides,
+  headTitle,
+}: {
+  slides: GetSlidesMDXReturn
+  headTitle?: string
+}) {
   const activeSlide = useActiveSlides()
   const Content = useMemo(() => getMDXComponent(slides[activeSlide].code), [activeSlide, slides])
 
   const title = `${
     activeSlide > 0 ? `${slides[activeSlide].frontmatter.title} - ` : ''
-  } Framer Motion Sharing Session`
+  } ${headTitle}`
 
   return (
     <SlidesWrapper>
@@ -26,7 +32,7 @@ export function SlidesInner({ slides }: { slides: GetSlidesMDXReturn }) {
       </Head>
       <motion.div
         className={cn(
-          'prose prose-neutral w-full max-w-6xl px-6 dark:prose-invert prose-headings:font-prompt md:prose-p:text-lg md:prose-li:text-lg lg:prose-p:leading-10',
+          'prose-headings:font-bricolage prose prose-neutral w-full max-w-6xl px-6 dark:prose-invert md:prose-p:text-lg md:prose-li:text-lg lg:prose-p:leading-10',
           'xl:prose-h1:text-4xl xl:prose-h2:text-3xl',
           '2xl:prose-p:text-xl 2xl:prose-li:text-xl'
         )}

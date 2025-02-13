@@ -1,5 +1,5 @@
 import { AppProps } from 'next/app'
-import { Inter_Tight, Nunito, Prompt } from 'next/font/google'
+import { Bricolage_Grotesque, Inter_Tight, Nunito, Prompt } from 'next/font/google'
 
 import { cn } from '@/lib/utils'
 
@@ -26,9 +26,24 @@ const prompt = Prompt({
   variable: '--font-prompt',
 })
 
+const bricolage = Bricolage_Grotesque({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-bricolage',
+})
+
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className={cn(nunito.variable, interTight.variable, prompt.variable, 'font-sans')}>
+    <div
+      className={cn(
+        nunito.variable,
+        interTight.variable,
+        prompt.variable,
+        bricolage.variable,
+        'font-sans'
+      )}
+    >
       <Providers>
         <Component {...pageProps} />
       </Providers>

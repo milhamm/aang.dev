@@ -1,0 +1,26 @@
+---
+title: 'Timeline'
+---
+
+import { Visualizer } from '../components/visualizer'
+import { VariantsComp } from '../components/variants'
+import { Footnotes } from '../components/footnotes'
+
+# Timeline
+
+The `animate` function can also accept complex animation sequences.
+A **sequence** is an array of animate definitions:
+
+<Visualizer Comp={VariantsComp}>
+```tsx showLineNumbers {4-5}
+import { animate, stagger } from 'motion'
+
+animate([
+  [".box", { opacity: [0, 1], scale: [0, 1] }],
+  [".item", { opacity: [0, 1], y: [20, 0] }, { delay: stagger(0.2) }],
+]);
+
+```
+</Visualizer>
+
+<Footnotes className='text-left'>Read more: <a href="https://motion.dev/docs/animate#timeline-sequences" target='_blank'>Motion: Timeline sequences</a></Footnotes>

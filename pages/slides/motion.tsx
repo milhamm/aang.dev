@@ -5,7 +5,7 @@ import { SlidesControlProvider } from '@/components/shared/slides/slides-control
 import { SlidesInner } from '@/components/shared/slides/slides-inner'
 import { getSlides, GetSlidesMDXReturn } from '@/lib/slides.server'
 
-const KEY = 'framer-motion'
+const KEY = 'motion-dev'
 
 export async function getStaticProps() {
   const slides = await getSlides(KEY)
@@ -17,7 +17,7 @@ export async function getStaticProps() {
   }
 }
 
-export default function FramerMotionSlides({ slides }: { slides: GetSlidesMDXReturn }) {
+export default function MotionSlides({ slides }: { slides: GetSlidesMDXReturn }) {
   return (
     <SlidesControlProvider numSlides={slides.length - 1}>
       <header className='fixed right-6 top-6'>
@@ -25,7 +25,7 @@ export default function FramerMotionSlides({ slides }: { slides: GetSlidesMDXRet
       </header>
       <BackgroundNoise />
       <NavigationMenu slideKey={KEY} totalSlides={slides.length} />
-      <SlidesInner slides={slides} headTitle='Framer Motion Sharing Session' />
+      <SlidesInner slides={slides} headTitle='After Office: Motion' />
     </SlidesControlProvider>
   )
 }

@@ -25,13 +25,13 @@ export function SlidesControlProvider({
 
   const next = () => {
     const page = getCurrentPage()
-    const url = `${router.asPath}?page=${Math.min(page + 1, numSlides)}`
+    const url = `${router.pathname}?page=${Math.min(page + 1, numSlides)}`
     router.push(url, url, { shallow: true })
   }
 
   const prev = () => {
     const page = getCurrentPage()
-    const url = `${router.asPath}?page=${Math.max(page - 1, 0)}`
+    const url = `${router.pathname}?page=${Math.max(page - 1, 0)}`
     router.push(url, url, { shallow: true })
   }
 

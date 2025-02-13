@@ -9,7 +9,7 @@ async function getSlidesEntries(key) {
   return paths
 }
 
-const key = 'framer-motion'
+const key = 'motion-dev'
 
 function delay(time) {
   return new Promise(function (resolve) {
@@ -17,7 +17,7 @@ function delay(time) {
   })
 }
 
-;(async () => {
+async function main() {
   // Launch the browser and open a new blank page
   const browser = await puppeteer.launch({ headless: false })
 
@@ -27,7 +27,7 @@ function delay(time) {
   await page.setViewport({ width: 1920, height: 1080 })
 
   for (let i = 0; i < paths.length; i++) {
-    await page.goto(`http://localhost:3000/slides/framer-motion?page=${i}`, {
+    await page.goto(`http://localhost:3000/slides/motion?page=${i}`, {
       waitUntil: 'domcontentloaded',
     })
     await delay(2000)
@@ -37,4 +37,6 @@ function delay(time) {
   }
 
   await browser.close()
-})()
+}
+
+main()
