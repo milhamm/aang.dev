@@ -9,7 +9,7 @@ async function getSlidesEntries(key) {
   return paths
 }
 
-const key = 'motion-dev'
+const key = 'motion'
 
 function delay(time) {
   return new Promise(function (resolve) {
