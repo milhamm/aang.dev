@@ -5,7 +5,7 @@ import { SlidesControlProvider } from '@/components/shared/slides/slides-control
 import { SlidesInner } from '@/components/shared/slides/slides-inner'
 import { getSlides, GetSlidesMDXReturn } from '@/lib/slides.server'
 
-const KEY = 'motion-dev'
+const KEY = 'motion'
 
 export async function getStaticProps() {
   const slides = await getSlides(KEY)

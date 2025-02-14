@@ -1,0 +1,51 @@
+---
+title: "Layout Animations"
+---
+
+import { Footnotes } from '../components/footnotes'
+import { Visualizer } from '../components/visualizer'
+import { LayoutAnimation } from '../components/layout-animation'
+
+# Layout Animations
+
+There's the **View Transition API**, a browser-native API that can animate between two different views.
+
+For motion itself they provide [`view`](https://motion.dev/docs/view) function ("Motion+" and "Alpha" stage)
+
+<Visualizer Comp={LayoutAnimation} reload={false}>
+```html
+<button onclick="toggleLayout()">Toggle Layout</button>
+<div class="items-container" id="itemsContainer" style="flex-direction: row">
+  <div class="item" style="view-transition-name: item-1">React</div>
+  <div class="item" style="view-transition-name: item-2">Motion</div>
+  <div class="item" style="view-transition-name: item-3">Layout Animations</div>
+  <div class="item" style="view-transition-name: item-4">is Magic</div>
+</div>
+
+<script>
+function render() {
+  const container = document.getElementById("itemsContainer");
+  isColumn = !isColumn;
+  container.style.flexDirection = isColumn ? "column" : "row";
+}
+
+async function toggleLayout() {
+  if (!document.startViewTransition) {
+    render();
+    return;
+  }
+
+  const transition = document.startViewTransition(() => {
+    render();
+  });
+
+  await transition.finished;
+}
+</script>
+
+```
+</Visualizer>
+
+- View Transition API is not interruptible
+
+<Footnotes className='text-left'>Read more: <a href="https://developer.chrome.com/docs/web-platform/view-transitions" target='_blank'>Smooth transitions with the View Transition API</a></Footnotes>
