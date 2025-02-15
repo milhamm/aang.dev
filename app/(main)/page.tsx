@@ -1,5 +1,5 @@
-import { BlogList, Section } from '@/components/shared'
-import { getAllBlogPosts } from '@/lib/blogs.server'
+import { Section } from '@/components/shared'
+import { BlogList, getAllBlogPosts } from '@/features/blogs'
 
 import { Hero } from './_component'
 

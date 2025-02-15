@@ -259,8 +259,8 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --framer-accent: rgb(221, 34, 204);
-    --motion-accent: #fde900;
+    --framer-accent: oklch(62.9% 0.266 332.7);
+    --motion-accent: oklch(92.1% 0.194 103.2);
 
     --radius: 0.5rem;
   }
@@ -294,13 +294,13 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
 
-    --framer-accent: rgb(221, 34, 204);
+    --framer-accent: oklch(62.9% 0.266 332.7);
   }
 }
 
 @layer utilities {
   ::selection {
-    color: #fff;
+    color: oklch(100% 0 NaN);
     background: var(--framer-accent);
   }
 
@@ -321,7 +321,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
 }
 
@@ -368,7 +368,7 @@
 }
 
 [data-highlighted-chars] {
-  background-color: #e7e7e739;
+  background-color: oklch(92.8% 0 NaN / 0.2235);
   border-radius: 2px;
   padding: 2px;
 }
@@ -395,7 +395,7 @@ code[data-line-numbers] > [data-line]:before {
 }
 
 [data-highlighted-line] {
-  background: #c8c8ff1a;
+  background: oklch(85.1% 0.076 284.7 / 0.102);
   --tw-border-opacity: 1;
   border-left-color: rgb(96 165 250 / var(--tw-border-opacity));
 }

@@ -1,15 +1,7 @@
-import { ButtonThemeSwitch } from '@/components/layouts/button-theme-switch'
-import { BackgroundNoise } from '@/components/shared/slides/background-noise'
-import { NavigationMenu } from '@/components/shared/slides/navigation-menu'
-import { SlidesControlProvider } from '@/components/shared/slides/slides-control-provider'
-import { SlidesInner } from '@/components/shared/slides/slides-inner'
-import { getSlides, GetSlidesMDXReturn } from '@/lib/slides.server'
-
-const KEY = 'motion'
+import { getSlides, GetSlidesMDXReturn, MOTION_SLIDE_KEY, MotionSlides } from '@/features/slides'
 
 export async function getStaticProps() {
-  const slides = await getSlides(KEY)
-
+  const slides = await getSlides(MOTION_SLIDE_KEY)
   return {
     props: {
       slides,
@@ -17,15 +9,6 @@ export async function getStaticProps() {
   }
 }
 
-export default function MotionSlides({ slides }: { slides: GetSlidesMDXReturn }) {
-  return (
-    <SlidesControlProvider numSlides={slides.length - 1}>
-      <header className='fixed top-6 right-6'>
-        <ButtonThemeSwitch />
-      </header>
-      <BackgroundNoise />
-      <NavigationMenu slideKey={KEY} totalSlides={slides.length} />
-      <SlidesInner slides={slides} headTitle='After Office: Motion' />
-    </SlidesControlProvider>
-  )
+export default function MotionSlidesPage({ slides }: { slides: GetSlidesMDXReturn }) {
+  return <MotionSlides slides={slides} />
 }
