@@ -32,7 +32,7 @@ export function SlidesInner({
       </Head>
       <motion.div
         className={cn(
-          'prose-headings:font-bricolage prose prose-neutral w-full max-w-6xl px-6 dark:prose-invert md:prose-p:text-lg md:prose-li:text-lg lg:prose-p:leading-10',
+          'prose prose-neutral w-full max-w-6xl px-6 dark:prose-invert prose-headings:font-bricolage md:prose-p:text-lg md:prose-li:text-lg lg:prose-p:leading-10',
           'xl:prose-h1:text-4xl xl:prose-h2:text-3xl',
           '2xl:prose-p:text-xl 2xl:prose-li:text-xl'
         )}

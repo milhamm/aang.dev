@@ -2,7 +2,7 @@ import { LayoutGroup, MotionConfig, motion } from 'framer-motion'
 
 export function EasingsChart() {
   return (
-    <div className='mx-0 mb-6 grid h-56 grid-cols-2 place-items-center rounded-lg border border-neutral-700 bg-background dots dots-neutral-700/50 md:-mx-16 md:h-96 dark:dots-neutral-700/80'>
+    <div className='mx-0 mb-6 grid h-56 grid-cols-2 place-items-center rounded-lg border border-neutral-700 bg-background dots dots-neutral-700/50 dark:dots-neutral-700/80 md:-mx-16 md:h-96'>
       <div className='relative grid size-full place-items-center'>
         <div className='flex h-[238px] w-60 items-center justify-between border-gray-400'>
           <svg viewBox='0 0 100 100' className='mt-[0px] h-60 w-60'>

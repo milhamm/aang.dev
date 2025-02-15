@@ -61,7 +61,7 @@ function NavItem({ href, text }: NavItemProps) {
         {isActive ? (
           <motion.span
             layoutId='hovered'
-            className='absolute inset-0 z-0 h-full w-full rounded-xl bg-neutral-200 px-3 py-1 lg:px-4 lg:py-2 dark:bg-gray-800'
+            className='absolute inset-0 z-0 h-full w-full rounded-xl bg-neutral-200 px-3 py-1 dark:bg-gray-800 lg:px-4 lg:py-2'
           />
         ) : null}
         <span className='relative z-50'>{text}</span>
