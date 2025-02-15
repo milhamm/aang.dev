@@ -16,21 +16,21 @@ export default function PlaygroundPage() {
       title='View Transitions Theme Switcher'
       subtitle='Theme switcher animation using View Transitions API'
     >
-      <div className='mx-0 mb-6 grid h-56 grid-cols-2 place-items-center rounded-lg border border-neutral-700 dots dots-neutral-700/50 dark:dots-neutral-700/80 md:-mx-16 md:h-96'>
+      <div className='dots dots-neutral-700/50 dark:dots-neutral-700/80 mx-0 mb-6 grid h-56 grid-cols-2 place-items-center rounded-lg border border-neutral-700 md:-mx-16 md:h-96'>
         <div className='relative grid size-full place-items-center'>
           <ThemeSwitcherButton />
-          <span className='absolute bottom-0 left-0 right-0 rounded-bl bg-foreground p-2 text-center font-mono text-xs text-background md:right-auto md:text-left'>
+          <span className='bg-foreground text-background absolute right-0 bottom-0 left-0 rounded-bl p-2 text-center font-mono text-xs md:right-auto md:text-left'>
             Slide In Reveal
           </span>
         </div>
         <div className='relative grid size-full place-items-center'>
           <ThemeSwitcherButton2 />
-          <span className='absolute bottom-0 left-0 right-0 rounded-br bg-foreground p-2 text-center font-mono text-xs text-background md:right-auto md:rounded-none md:text-left'>
+          <span className='bg-foreground text-background absolute right-0 bottom-0 left-0 rounded-br p-2 text-center font-mono text-xs md:right-auto md:rounded-none md:text-left'>
             Circular Reveal
           </span>
         </div>
       </div>
-      <article className='prose mt-12 dark:prose-invert prose-headings:font-prompt'>
+      <article className='prose dark:prose-invert prose-headings:font-prompt mt-12'>
         <h3>Links</h3>
         <ul>
           <li>

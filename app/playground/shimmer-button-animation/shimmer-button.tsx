@@ -22,12 +22,12 @@ export function ShimmerButton() {
     <button
       className={cn(
         'group relative isolate h-16 overflow-hidden rounded-full px-12 text-white',
-        'transition-colors after:absolute after:inset-[4px] after:-z-10 after:rounded-full after:bg-neutral-900 after:transition-colors after:hover:bg-neutral-700'
+        'transition-colors after:absolute after:inset-[4px] after:-z-10 after:rounded-full after:bg-neutral-900 after:transition-colors hover:after:bg-neutral-700'
       )}
       type='button'
     >
       <span
-        className='absolute inset-0 -z-10 h-[600%] w-[600%] -translate-x-[80%] transform-gpu opacity-0 transition-transform group-hover:animate-shimmer-button'
+        className='group-hover:animate-shimmer-button absolute inset-0 -z-10 h-[600%] w-[600%] -translate-x-[80%] transform-gpu opacity-0 transition-transform'
         style={
           {
             '--first': '#F6D242',

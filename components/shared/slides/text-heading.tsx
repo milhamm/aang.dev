@@ -9,7 +9,7 @@ export function TextHeading({
   return (
     <h1
       className={cn(
-        'max-w-5xl text-balance font-prompt !text-7xl font-bold tracking-tight',
+        'font-prompt max-w-5xl text-7xl! font-bold tracking-tight text-balance',
         className
       )}
     >

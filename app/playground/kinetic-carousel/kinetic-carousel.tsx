@@ -1,7 +1,7 @@
 'use client'
 
 import { useLayoutEffect, useRef } from 'react'
-import { motion, MotionValue, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { motion, MotionValue, useMotionValue, useSpring, useTransform } from 'motion/react'
 
 const defaultWidth = 40
 const expandedWidth = 400
@@ -42,7 +42,7 @@ const CarouselItem = ({ mouseX }: CarouselItemProps) => {
         width,
         scale,
       }}
-      className='h-full origin-left cursor-pointer bg-foreground will-change-[transform,width]'
+      className='bg-foreground h-full origin-left cursor-pointer will-change-[transform,width]'
     ></motion.div>
   )
 }
@@ -56,7 +56,7 @@ export function KineticCarousel() {
 
   return (
     <div
-      className='relative left-1/2 right-1/2 -mx-[50vw] h-96 w-screen'
+      className='relative right-1/2 left-1/2 -mx-[50vw] h-96 w-screen'
       onMouseMove={(e) => mouseX.set(e.clientX)}
       onMouseLeave={() => mouseX.set(Infinity)}
     >

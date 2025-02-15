@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 
 import { Button } from '@/components/ui'
 
@@ -13,7 +13,7 @@ export function TransitionComp() {
       <div>
         <motion.div
           key={key}
-          className='size-20 rounded-full bg-gradient-to-r from-pink-500 to-pink-700'
+          className='size-20 rounded-full bg-linear-to-r from-pink-500 to-pink-700'
           initial={{ x: 16 }}
           animate={{ x: (ref?.getBoundingClientRect().width || 0) - 80 - 16 }}
           transition={

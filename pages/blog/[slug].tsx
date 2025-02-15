@@ -47,7 +47,7 @@ export default function BlogDetailPage({ blog }: BlogDetailPageProps) {
         <title>{frontmatter.title}</title>
       </Head>
       <BlogHeader frontmatter={frontmatter} />
-      <article className='prose mb-10 pl-2 dark:prose-invert prose-p:text-sm prose-p:leading-8 md:pl-6 lg:pl-10 lg:prose-p:text-lg lg:prose-p:leading-10'>
+      <article className='prose dark:prose-invert prose-p:text-sm prose-p:leading-8 lg:prose-p:text-lg lg:prose-p:leading-10 mb-10 pl-2 md:pl-6 lg:pl-10'>
         <Content
           components={{
             h2: Heading2,

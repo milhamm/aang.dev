@@ -1,5 +1,5 @@
 import React, { useReducer, useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { ArrowRight } from 'lucide-react'
 
 import { Button } from '@/components/ui'
@@ -25,7 +25,7 @@ export function LayoutAnimation() {
           <motion.div
             id={item.split(' ').join('').toLowerCase()}
             layout={isLayout}
-            className='rounded-lg border border-yellow-600/50 bg-gradient-to-r from-yellow-400/10 to-yellow-500/40 px-3 py-1 font-prompt'
+            className='font-prompt rounded-lg border border-yellow-600/50 bg-linear-to-r from-yellow-400/10 to-yellow-500/40 px-3 py-1'
             key={item}
           >
             {item}

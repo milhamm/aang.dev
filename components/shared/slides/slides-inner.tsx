@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import Head from 'next/head'
-import { motion } from 'framer-motion'
 import { getMDXComponent } from 'mdx-bundler/client'
+import { motion } from 'motion/react'
 
 import { GetSlidesMDXReturn } from '@/lib/slides.server'
 import { cn } from '@/lib/utils'
@@ -32,7 +32,7 @@ export function SlidesInner({
       </Head>
       <motion.div
         className={cn(
-          'prose prose-neutral w-full max-w-6xl px-6 dark:prose-invert prose-headings:font-bricolage md:prose-p:text-lg md:prose-li:text-lg lg:prose-p:leading-10',
+          'prose prose-neutral dark:prose-invert prose-headings:font-bricolage md:prose-p:text-lg md:prose-li:text-lg lg:prose-p:leading-10 w-full max-w-6xl px-6',
           'xl:prose-h1:text-4xl xl:prose-h2:text-3xl',
           '2xl:prose-p:text-xl 2xl:prose-li:text-xl'
         )}

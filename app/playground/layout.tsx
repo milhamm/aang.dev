@@ -16,7 +16,7 @@ export default function PlaygroundLayout({ children }: React.PropsWithChildren) 
         <span>~{pathname}</span>
       </p>
       <div className='mt-12 md:mt-24'>{children}</div>
-      <footer className='mt-12 flex flex-col gap-3 border-t border-border pt-5 text-sm text-muted-foreground/70'>
+      <footer className='border-border text-muted-foreground/70 mt-12 flex flex-col gap-3 border-t pt-5 text-sm'>
         <span>Built by</span>
         <span className='*:underline'>
           <a href='https://twitter.com/gluekol' target='_blank' rel='noopener noreferrer'>

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import * as RadixNavMenu from '@radix-ui/react-navigation-menu'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 
 import { cn } from '@/lib/utils'
 
@@ -50,11 +50,11 @@ export function NavigationMenu({ slideKey, totalSlides }: NavigationMenuProps) {
               asChild
             >
               <Link href={`/slides/${slideKey}?page=${i}`} shallow>
-                <div className={cn('mx-0.5 h-0.5 w-full bg-foreground/40')}>
+                <div className={cn('bg-foreground/40 mx-0.5 h-0.5 w-full')}>
                   {i === activeSlide && (
                     <motion.div
                       layoutId='navActiveIndicator'
-                      className='size-full bg-foreground'
+                      className='bg-foreground size-full'
                     ></motion.div>
                   )}
                 </div>
@@ -92,7 +92,7 @@ export function NavigationMenu({ slideKey, totalSlides }: NavigationMenuProps) {
           transform: `translateX(calc(${offset} * var(--trigger-width)))`,
         }}
       >
-        <RadixNavMenu.Viewport className='relative mt-1 flex h-[var(--preview-height)] w-[var(--preview-width)] origin-center overflow-hidden rounded-[6px] bg-white transition-[width,_height] duration-300 data-[state=closed]:animate-scaleOut data-[state=open]:animate-scaleIn' />
+        <RadixNavMenu.Viewport className='data-[state=closed]:animate-scaleOut data-[state=open]:animate-scaleIn relative mt-1 flex h-[var(--preview-height)] w-[var(--preview-width)] origin-center overflow-hidden rounded-[6px] bg-white transition-[width,_height] duration-300' />
       </div>
     </RadixNavMenu.Root>
   )

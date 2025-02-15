@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'motion/react'
 import { useReducer } from 'react'
 
 const infiniteTransition = {
@@ -12,7 +12,7 @@ const infiniteTransition = {
 
 export function SmartCreatives() {
   return (
-    <div className='flex items-center justify-center font-prompt'>
+    <div className='font-prompt flex items-center justify-center'>
       <div className='relative flex items-center gap-[5%]'>
         <AnimatePresence>
           <motion.div
@@ -48,7 +48,7 @@ export function SmartCreatives() {
             className='mask-squircle relative size-96 items-center justify-center text-3xl mix-blend-hard-light'
           >
             <motion.span
-              className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'
+              className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
               animate={{ opacity: [1, 0, 0, 0, 1] }}
               transition={infiniteTransition}
             >
@@ -57,7 +57,7 @@ export function SmartCreatives() {
             <motion.span
               animate={{ opacity: [0, 1, 1, 1, 0] }}
               transition={infiniteTransition}
-              className='absolute left-1/2 top-1/2 z-40 -translate-x-1/2 -translate-y-1/2 text-center text-black'
+              className='absolute top-1/2 left-1/2 z-40 -translate-x-1/2 -translate-y-1/2 text-center text-black'
             >
               Smart Creatives
             </motion.span>

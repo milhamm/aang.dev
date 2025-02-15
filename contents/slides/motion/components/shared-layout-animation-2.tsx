@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import * as Portal from '@radix-ui/react-portal'
 import { cva, VariantProps } from 'class-variance-authority'
-import { AnimatePresence, motion, MotionProps } from 'framer-motion'
+import { AnimatePresence, motion, MotionProps } from 'motion/react'
 
 import { useOnClickOutside } from '@/lib/hooks'
 import { cn } from '@/lib/utils'
@@ -34,11 +34,11 @@ function HeadingContent({ variant, className, ...rest }: HeadingContentProps) {
           layoutId='image'
           src='/images/raycast-wp-1.jpg'
           alt='Raycast Wallpaper'
-          className={cn('relative !m-0 block w-full object-cover object-center')}
+          className={cn('relative m-0! block w-full object-cover object-center')}
         />
         <motion.div
           layoutId='bg-gradient'
-          className='absolute inset-0 -bottom-6 rounded-xl bg-gradient-to-t from-black from-5%'
+          className='absolute inset-0 -bottom-6 rounded-xl bg-linear-to-t from-black from-5%'
         ></motion.div>
       </motion.div>
 
@@ -46,8 +46,8 @@ function HeadingContent({ variant, className, ...rest }: HeadingContentProps) {
         <motion.h1
           layoutId='title'
           className={cn(
-            'relative font-prompt text-4xl font-bold text-white',
-            variant === 'default' ? 'text-4xl font-bold' : '!mb-0 !text-lg'
+            'font-prompt relative text-4xl font-bold text-white',
+            variant === 'default' ? 'text-4xl font-bold' : 'mb-0! text-lg!'
           )}
         >
           Raycast Wallpaper
@@ -56,7 +56,7 @@ function HeadingContent({ variant, className, ...rest }: HeadingContentProps) {
           layoutId='description'
           className={cn(
             'relative text-white',
-            variant === 'default' ? 'mt-4 text-lg' : '!mb-0 mt-2 !text-sm'
+            variant === 'default' ? 'mt-4 text-lg' : 'mt-2 mb-0! text-sm!'
           )}
         >
           Wallpaper is generated using shader
@@ -106,7 +106,7 @@ export function SharedLayoutAnimation2({ className = 'grid grid-cols-3' }: { cla
                 <motion.div
                   layout
                   layoutId='bg'
-                  className='w-full max-w-4xl rounded-xl bg-background p-1'
+                  className='bg-background w-full max-w-4xl rounded-xl p-1'
                 >
                   <HeadingContent variant='default' />
                   <motion.div
@@ -127,7 +127,7 @@ export function SharedLayoutAnimation2({ className = 'grid grid-cols-3' }: { cla
         )}
       </AnimatePresence>
       <div className={className} key={`${active}`}>
-        <motion.div layoutId='bg' className='w-full max-w-4xl rounded-xl bg-background p-1'>
+        <motion.div layoutId='bg' className='bg-background w-full max-w-4xl rounded-xl p-1'>
           <HeadingContent
             tabIndex={0}
             variant='sm'

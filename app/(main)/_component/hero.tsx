@@ -17,7 +17,7 @@ export function Hero() {
     //     <div className='ml-0 mt-5 px-4 lg:ml-6 lg:mt-0'>
     //       <h1 className='bg-background text-center font-prompt text-2xl font-bold text-foreground lg:text-left'>
     //         Muhammad Ilham Mubarak {' // '}
-    //         <span className='bg-gradient-to-br from-cyan-500 to-cyan-300 bg-clip-text text-transparent'>
+    //         <span className='bg-linear-to-br from-cyan-500 to-cyan-300 bg-clip-text text-transparent'>
     //           Aang
     //         </span>
     //       </h1>
@@ -431,11 +431,11 @@ export function Hero() {
         <path d='M559.7 318.213L553.75 313.587' stroke='#FF38BB' strokeLinecap='round' />
       </svg>
       <div className='mt-5 lg:mt-8'>
-        <h1 className='text-center font-prompt text-xl font-bold text-foreground lg:text-left lg:text-4xl'>
+        <h1 className='font-prompt text-foreground text-center text-xl font-bold lg:text-left lg:text-4xl'>
           Muhammad Ilham Mubarak {' // '}
           <span className='text-[#FF38BB]'>Aang</span>
         </h1>
-        <p className='mt-3 text-center text-base text-muted-foreground lg:inline-block lg:w-auto lg:text-left lg:text-xl'>
+        <p className='text-muted-foreground mt-3 text-center text-base lg:inline-block lg:w-auto lg:text-left lg:text-xl'>
           Software Engineer - Web
         </p>
       </div>

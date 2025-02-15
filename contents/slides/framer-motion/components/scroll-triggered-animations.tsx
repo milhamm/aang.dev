@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 
 export function ScrollTriggeredAnimations() {
   const scrollRef = useRef(null)
@@ -22,7 +22,7 @@ export function ScrollTriggeredAnimations() {
             >
               <img
                 src='/images/raycast-wp-1.jpg'
-                className='!my-0 size-full object-cover'
+                className='my-0! size-full object-cover'
                 alt='raycast'
               />
             </motion.div>
@@ -34,7 +34,7 @@ export function ScrollTriggeredAnimations() {
             >
               <img
                 src='/images/raycast-wp-1.jpg'
-                className='!my-0 size-full object-cover'
+                className='my-0! size-full object-cover'
                 alt='raycast'
               />
             </motion.div>
@@ -46,7 +46,7 @@ export function ScrollTriggeredAnimations() {
             >
               <img
                 src='/images/raycast-wp-1.jpg'
-                className='!my-0 size-full object-cover'
+                className='my-0! size-full object-cover'
                 alt='raycast'
               />
             </motion.div>
@@ -58,7 +58,7 @@ export function ScrollTriggeredAnimations() {
             >
               <img
                 src='/images/raycast-wp-1.jpg'
-                className='!my-0 size-full object-cover'
+                className='my-0! size-full object-cover'
                 alt='raycast'
               />
             </motion.div>

@@ -21,18 +21,18 @@ export function BlogCard({ data, slug }: PostCardProps) {
       href={`/blog/${slug}`}
       className={cn(
         'relative cursor-pointer transition-all',
-        "after:absolute after:bottom-0 after:h-full after:w-full after:rounded-xl after:bg-gradient-to-t after:from-background after:from-5% after:content-['']"
+        "after:from-background after:absolute after:bottom-0 after:h-full after:w-full after:rounded-xl after:bg-linear-to-t after:from-5% after:content-['']"
       )}
     >
-      <div className='aspect-[5/4] rounded-xl border-2 border-border p-1 '>
+      <div className='border-border aspect-5/4 rounded-xl border-2 p-1'>
         <div
           className={cn(
-            'flex h-full flex-col justify-end rounded-lg bg-gradient-to-br p-4 text-base text-neutral-800 dark:text-neutral-100',
+            'flex h-full flex-col justify-end rounded-lg bg-linear-to-br p-4 text-base text-neutral-800 dark:text-neutral-100',
             pallete[data.color || 'blue']
           )}
         >
-          <h3 className='z-10 mb-2 line-clamp-4 text-balance font-bold'>{data.title}</h3>
-          <span className='z-10 text-xs text-muted-foreground'>{publishedAt.getShortFormat()}</span>
+          <h3 className='z-10 mb-2 line-clamp-4 font-bold text-balance'>{data.title}</h3>
+          <span className='text-muted-foreground z-10 text-xs'>{publishedAt.getShortFormat()}</span>
         </div>
       </div>
     </Link>

@@ -16,19 +16,19 @@ export function BlogHeader({ frontmatter }: BlogHeaderProps) {
     <div
       className={cn(
         'relative',
-        "after:absolute after:bottom-0 after:h-full after:w-full after:bg-gradient-to-t after:from-background after:from-20% after:content-['']"
+        "after:from-background after:absolute after:bottom-0 after:h-full after:w-full after:bg-linear-to-t after:from-20% after:content-['']"
       )}
     >
-      <div className='rounded-2xl border-2 border-border p-0 lg:p-2'>
+      <div className='border-border rounded-2xl border-2 p-0 lg:p-2'>
         <div
           className={cn(
             'mb-10 flex h-60 w-full flex-col justify-end gap-4 rounded-xl p-4 md:p-6 lg:h-[450px] lg:p-10',
-            'bg-gradient-to-br',
+            'bg-linear-to-br',
             pallete[colorPallete || 'blue']
           )}
         >
-          <h1 className='z-10 max-w-lg font-prompt text-2xl font-bold lg:text-4xl'>{title}</h1>
-          <span className='z-10 text-xs text-muted-foreground md:text-base'>
+          <h1 className='font-prompt z-10 max-w-lg text-2xl font-bold lg:text-4xl'>{title}</h1>
+          <span className='text-muted-foreground z-10 text-xs md:text-base'>
             {publishedAtFormatted.getFullFormat()}
           </span>
         </div>

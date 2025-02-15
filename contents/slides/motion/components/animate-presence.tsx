@@ -1,5 +1,5 @@
 import { useReducer, useState } from 'react'
-import { AnimatePresence, AnimatePresenceProps, motion, Variants, wrap } from 'framer-motion'
+import { AnimatePresence, AnimatePresenceProps, motion, Variants, wrap } from 'motion/react'
 
 import { Button, ToggleGroup, ToggleGroupItem } from '@/components/ui'
 import { ColorPallete, pallete } from '@/lib/pallete'
@@ -70,7 +70,7 @@ export function AnimatePresenceComp() {
             exit='exit'
             custom={currentSlide.dir}
             className={cn(
-              'mask-squircle grid  size-36 grid-cols-2 items-center gap-4 bg-gradient-to-br p-4',
+              'mask-squircle grid size-36 grid-cols-2 items-center gap-4 bg-linear-to-br p-4',
               pallete[colors[currentSlide.curr]]
             )}
           />

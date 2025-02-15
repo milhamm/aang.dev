@@ -14,7 +14,7 @@ export function Visualizer({ children, Comp, reload = true, className }: Visuali
   return (
     <div
       className={cn(
-        'mx-0 flex h-full max-h-96 overflow-clip rounded-lg border border-neutral-700 bg-background text-sm dots dots-neutral-700/40 xl:-mx-16 [&_pre]:m-0 [&_pre]:!bg-transparent',
+        'bg-background dots dots-neutral-700/40 mx-0 flex h-full max-h-96 overflow-clip rounded-lg border border-neutral-700 text-sm xl:-mx-16 [&_pre]:m-0 [&_pre]:bg-transparent!',
         className
       )}
     >

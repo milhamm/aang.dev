@@ -6,7 +6,7 @@ export function Footnotes({
 }: React.PropsWithChildren<{ className?: string }>) {
   return (
     <footer
-      className={cn('fixed mt-11 w-full text-center text-xs text-muted-foreground', className)}
+      className={cn('text-muted-foreground fixed mt-11 w-full text-center text-xs', className)}
     >
       {children}
     </footer>

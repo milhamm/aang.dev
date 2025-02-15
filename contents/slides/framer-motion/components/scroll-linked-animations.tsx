@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef, useState } from 'react'
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
+import { motion, useScroll, useSpring, useTransform } from 'motion/react'
 
 export function ScrollLinkedAnimations() {
   const container = useRef<HTMLDivElement>(null)
@@ -63,12 +63,12 @@ export function ScrollLinkedAnimations() {
               <motion.div
                 ref={itemScroll}
                 style={{ x, y: '-50%' }}
-                className='absolute left-full top-1/2 flex gap-28 font-prompt font-bold'
+                className='font-prompt absolute top-1/2 left-full flex gap-28 font-bold'
               >
-                <div className='whitespace-nowrap text-[5vw]'>Project 1</div>
-                <div className='whitespace-nowrap text-[5vw]'>Project 2</div>
-                <div className='whitespace-nowrap text-[5vw]'>Project 3</div>
-                <div className='whitespace-nowrap text-[5vw]'>Project 4</div>
+                <div className='text-[5vw] whitespace-nowrap'>Project 1</div>
+                <div className='text-[5vw] whitespace-nowrap'>Project 2</div>
+                <div className='text-[5vw] whitespace-nowrap'>Project 3</div>
+                <div className='text-[5vw] whitespace-nowrap'>Project 4</div>
               </motion.div>
             </div>
           </div>
@@ -76,28 +76,28 @@ export function ScrollLinkedAnimations() {
             <div className='relative h-[170px] w-full overflow-clip rounded-xl'>
               <img
                 src='/images/raycast-wp-1.jpg'
-                className='!my-0 size-full object-cover'
+                className='my-0! size-full object-cover'
                 alt='raycast'
               />
             </div>
             <div className='relative h-[170px] w-full overflow-clip rounded-xl'>
               <img
                 src='/images/raycast-wp-1.jpg'
-                className='!my-0 size-full object-cover'
+                className='my-0! size-full object-cover'
                 alt='raycast'
               />
             </div>
             <div className='relative h-[170px] w-full overflow-clip rounded-xl'>
               <img
                 src='/images/raycast-wp-1.jpg'
-                className='!my-0 size-full object-cover'
+                className='my-0! size-full object-cover'
                 alt='raycast'
               />
             </div>
             <div className='relative h-[170px] w-full overflow-clip rounded-xl'>
               <img
                 src='/images/raycast-wp-1.jpg'
-                className='!my-0 size-full object-cover'
+                className='my-0! size-full object-cover'
                 alt='raycast'
               />
             </div>

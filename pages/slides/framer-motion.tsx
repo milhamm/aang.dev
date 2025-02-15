@@ -20,7 +20,7 @@ export async function getStaticProps() {
 export default function FramerMotionSlides({ slides }: { slides: GetSlidesMDXReturn }) {
   return (
     <SlidesControlProvider numSlides={slides.length - 1}>
-      <header className='fixed right-6 top-6'>
+      <header className='fixed top-6 right-6'>
         <ButtonThemeSwitch />
       </header>
       <BackgroundNoise />

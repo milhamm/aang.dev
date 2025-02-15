@@ -1,4 +1,4 @@
-import { motion, Variants } from 'framer-motion'
+import { motion, Variants } from 'motion/react'
 
 const container: Variants = {
   hidden: { opacity: 1, scale: 0 },
@@ -26,7 +26,7 @@ export function VariantsComp() {
       initial='hidden'
       animate='visible'
       variants={container}
-      className='mask-squircle grid size-36 grid-cols-2 items-center gap-4 bg-gradient-to-r from-pink-500 to-pink-700 p-4'
+      className='mask-squircle grid size-36 grid-cols-2 items-center gap-4 bg-linear-to-r from-pink-500 to-pink-700 p-4'
     >
       {Array.from(Array(4).keys()).map((i) => {
         return (

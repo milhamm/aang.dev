@@ -16,7 +16,7 @@ export function DialogExample({ easingClassName }: { easingClassName?: string })
       <DialogTrigger asChild>
         <Button>Open Me</Button>
       </DialogTrigger>
-      <DialogContent className={cn(easingClassName, '!duration-300')}>
+      <DialogContent className={cn(easingClassName, 'duration-300!')}>
         <DialogHeader>
           <DialogTitle>Are you absolutely sure?</DialogTitle>
           <DialogDescription>

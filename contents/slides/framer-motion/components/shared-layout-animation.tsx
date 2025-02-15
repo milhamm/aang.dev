@@ -1,5 +1,5 @@
 import React, { useReducer, useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { ArrowRight } from 'lucide-react'
 
 import { Button } from '@/components/ui'
@@ -25,7 +25,7 @@ export function SharedLayoutAnimation() {
           <motion.div
             id={item.split(' ').join('').toLowerCase()}
             layout
-            className='relative cursor-pointer rounded-lg px-3 py-1 font-prompt transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring'
+            className='font-prompt focus-visible:ring-ring relative cursor-pointer rounded-lg px-3 py-1 transition-colors focus-visible:ring-1 focus-visible:outline-hidden'
             key={item}
             onMouseEnter={() => setActiveTabs(item)}
             onMouseLeave={() => setActiveTabs(item)}
@@ -35,7 +35,7 @@ export function SharedLayoutAnimation() {
             {activeTabs === item && (
               <motion.div
                 layoutId='activeTabs'
-                className='absolute inset-0 rounded-lg border border-pink-800 bg-gradient-to-r from-pink-500/10 to-pink-700/40'
+                className='absolute inset-0 rounded-lg border border-pink-800 bg-linear-to-r from-pink-500/10 to-pink-700/40'
                 transition={{ type: 'spring', duration: 0.8, bounce: 0.2 }}
               />
             )}

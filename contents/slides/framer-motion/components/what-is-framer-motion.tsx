@@ -14,7 +14,7 @@ function TextReveal({ beforeText, afterText, triggerName, content, children }: T
       {beforeText ? <span>{beforeText} </span> : null}
       <Collapsible.Root asChild>
         <span>
-          <Collapsible.Trigger className='reveal-trigger cursor-help rounded-xl border border-foreground px-1 hover:border-[var(--framer-accent)] hover:bg-[var(--framer-accent)] hover:text-background md:text-base xl:px-3 xl:text-2xl'>
+          <Collapsible.Trigger className='reveal-trigger border-foreground hover:text-background cursor-help rounded-xl border px-1 hover:border-[var(--framer-accent)] hover:bg-[var(--framer-accent)] md:text-base xl:px-3 xl:text-2xl'>
             {triggerName}
           </Collapsible.Trigger>
           {afterText ? <span className='after-text'> {afterText} </span> : null}
@@ -22,7 +22,7 @@ function TextReveal({ beforeText, afterText, triggerName, content, children }: T
             hidden={false}
             asChild
             forceMount
-            className='reveal-content data-[state="closed"]:pointer-events-none data-[state="open"]:animate-not-so-boring-fast data-[state="closed"]:text-foreground data-[state="closed"]:blur-[5px]'
+            className='reveal-content data-[state="open"]:animate-not-so-boring-fast data-[state="closed"]:text-foreground data-[state="closed"]:pointer-events-none data-[state="closed"]:blur-[5px]'
           >
             <span>
               <span> {content} </span>
