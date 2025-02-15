@@ -2,7 +2,7 @@ import { ArrowUpRight } from 'lucide-react'
 import { Variants } from 'motion/react'
 
 import { Layout } from '@/components/layouts'
-import { MotionLi, MotionUl } from '@/components/ui'
+import { MotionLi, MotionUl } from '@/components/ui/motion'
 import { cn } from '@/lib/utils'
 
 export default function WorksPage() {

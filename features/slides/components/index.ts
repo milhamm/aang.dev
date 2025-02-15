@@ -1,6 +1,0 @@
-export * from './background-noise'
-export * from './navigation-menu'
-export * from './slides-control-provider'
-export * from './slides-inner'
-export * from './slides-wrapper'
-export * from './text-heading'

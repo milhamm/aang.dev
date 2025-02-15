@@ -5,9 +5,9 @@ import path from 'path'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypePrettyCode from 'rehype-pretty-code'
 
-import { ColorPallete } from '../../../lib/pallete'
+import { ColorPallete } from './pallete'
 
-const BLOG_DIR = path.join(process.cwd(), '/features/blogs/contents')
+const BLOG_DIR = path.join(process.cwd(), '/contents/blogs')
 const FILENAME = 'index.mdx'
 
 async function getBlogEntries() {

@@ -1,12 +1,15 @@
-import {
-  FRAMER_MOTION_KEY,
-  FramerMotionSlides,
-  getSlides,
-  GetSlidesMDXReturn,
-} from '@/features/slides'
+import { ButtonThemeSwitch } from '@/components/layouts/button-theme-switch'
+import { BackgroundNoise } from '@/components/shared/slides/background-noise'
+import { NavigationMenu } from '@/components/shared/slides/navigation-menu'
+import { SlidesControlProvider } from '@/components/shared/slides/slides-control-provider'
+import { SlidesInner } from '@/components/shared/slides/slides-inner'
+import { getSlides, GetSlidesMDXReturn } from '@/lib/slides.server'
+
+const KEY = 'framer-motion'
 
 export async function getStaticProps() {
-  const slides = await getSlides(FRAMER_MOTION_KEY)
+  const slides = await getSlides(KEY)
+
   return {
     props: {
       slides,
@@ -14,6 +17,15 @@ export async function getStaticProps() {
   }
 }
 
-export default function FramerMotionSlidePage({ slides }: { slides: GetSlidesMDXReturn }) {
-  return <FramerMotionSlides slides={slides} />
+export default function FramerMotionSlides({ slides }: { slides: GetSlidesMDXReturn }) {
+  return (
+    <SlidesControlProvider numSlides={slides.length - 1}>
+      <header className='fixed top-6 right-6'>
+        <ButtonThemeSwitch />
+      </header>
+      <BackgroundNoise />
+      <NavigationMenu slideKey={KEY} totalSlides={slides.length} />
+      <SlidesInner slides={slides} headTitle='Framer Motion Sharing Session' />
+    </SlidesControlProvider>
+  )
 }

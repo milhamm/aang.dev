@@ -1,6 +1,5 @@
-import { BlogPost } from '../lib'
-
-import { BlogCard } from './blog-card'
+import { BlogCard } from '@/components/shared'
+import { BlogPost } from '@/lib/blogs.server'
 
 type BlogListProps = {
   posts: BlogPost[]

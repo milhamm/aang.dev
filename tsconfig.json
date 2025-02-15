@@ -1,5 +1,5 @@
 {
-    "compileOnSave": true,
+    "$schema": "https://json.schemastore.org/tsconfig",
     "compilerOptions": {
         "target": "ESNext",
         "lib": ["dom", "dom.iterable", "esnext"],
@@ -17,9 +17,10 @@
         "jsx": "preserve",
         "baseUrl": ".",
         "paths": {
-            "@/components/*": ["components/*"],
-            "@/features/*": ["features/*"],
-            "@/lib/*": ["lib/*"]
+            "@/app/*": ["./app/*"],
+            "@/components/*": ["./components/*"],
+            "@/lib/*": ["./lib/*"],
+            "~/*": ["./public/*"]
         },
         "incremental": true,
         "plugins": [
@@ -28,6 +29,6 @@
             }
         ]
     },
-    "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
     "exclude": ["node_modules"]
 }

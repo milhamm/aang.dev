@@ -3,10 +3,10 @@ import Head from 'next/head'
 import { getMDXComponent } from 'mdx-bundler/client'
 import { motion } from 'motion/react'
 
-import { Link } from '@/components/ui'
+import { GetSlidesMDXReturn } from '@/lib/slides.server'
 import { cn } from '@/lib/utils'
 
-import { GetSlidesMDXReturn } from '../lib'
+import { Link } from '../../ui'
 
 import { useActiveSlides } from './slides-control-provider'
 import { SlidesWrapper } from './slides-wrapper'
