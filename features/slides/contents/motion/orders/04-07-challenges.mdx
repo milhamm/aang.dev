@@ -1,0 +1,25 @@
+---
+title: "Challenges"
+---
+
+import { TextHeading } from '../../../components/text-heading'
+import { Footnotes } from '../components/footnotes'
+
+# <span className='from-yellow-400 to-yellow-500 dark:from-yellow-300 dark:to-yellow-400 bg-linear-to-r bg-clip-text text-transparent'> Challenges </span> on Web Animations
+
+#### CSS
+  - Not all CSS Properties are [animatable](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties)
+  - Limited controls over complex animations using CSS
+  - Reflows causing [Layout Thrashing](https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing)
+  - [Poor DX](https://linear-easing-generator.netlify.app/) when creating custom physics-based animation in CSS
+  - Interruptible animations
+#### JavaScript
+  - [Main thread blocking](https://web.dev/articles/rendering-performance)
+  - Limited controls over hardware-accelerated animations
+  - Bundle size
+
+
+<Footnotes>Read more: <a href="https://motion.dev/docs/performance" target='_blank'>Motion Dev: Performance</a></Footnotes>
+
+
+

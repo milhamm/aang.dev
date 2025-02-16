@@ -20,6 +20,7 @@
             "@/app/*": ["./app/*"],
             "@/components/*": ["./components/*"],
             "@/lib/*": ["./lib/*"],
+            "@/features/*": ["./features/*"],
             "~/*": ["./public/*"]
         },
         "incremental": true,

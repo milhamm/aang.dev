@@ -14,8 +14,8 @@ export function Heading2({
       id={id}
       {...props}
     >
-      <a href={`#${id}`} className='rounded p-1 opacity-0 hover:bg-muted group-hover:opacity-100'>
-        <Hash className='size-5 text-muted-foreground' />
+      <a href={`#${id}`} className='hover:bg-muted rounded p-1 opacity-0 group-hover:opacity-100'>
+        <Hash className='text-muted-foreground size-5' />
       </a>
       <span>{children}</span>
     </h2>

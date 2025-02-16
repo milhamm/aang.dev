@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 export default function AboutPage() {
   return (
     <div className='space-y-6'>
-      <div className='mask-squircle mx-auto flex size-[140px] items-center justify-center bg-background'>
+      <div className='mask-squircle bg-background mx-auto flex size-[140px] items-center justify-center'>
         <Image
           src='https://avatars.githubusercontent.com/u/35242329?v=4'
           alt='Aang'
@@ -19,14 +19,14 @@ export default function AboutPage() {
       </div>
       <div className='inline-flex w-full flex-col gap-1 text-center'>
         <span className='font-prompt text-3xl font-bold'>Muhammad Ilham Mubarak</span>
-        <span className='text-sm text-muted-foreground'>
+        <span className='text-muted-foreground text-sm'>
           <a href='mailto:me@aang.dev' className='hover:underline'>
             me@aang.dev
           </a>{' '}
           {' · '} Indonesia
         </span>
       </div>
-      <div className='space-y-4 text-lg leading-relaxed text-foreground'>
+      <div className='text-foreground space-y-4 text-lg leading-relaxed'>
         <p>
           Hi everyone 👋, {"I'm Ilham or "}
           <span className='font-bold text-cyan-400'>Aang</span>.
@@ -45,27 +45,27 @@ export default function AboutPage() {
           asChild
         >
           <a href='mailto:me@aang.dev'>
-            <MailIcon className='size-4 text-muted-foreground' />
+            <MailIcon className='text-muted-foreground size-4' />
           </a>
         </Button>
         <Button className='aspect-square p-0' variant='outline' aria-label='LinkedIn' asChild>
           <a href='https://www.linkedin.com/in/milhamm/' target='_blank' rel='noopener noreferrer'>
-            <Linkedin className='size-4 text-muted-foreground' />
+            <Linkedin className='text-muted-foreground size-4' />
           </a>
         </Button>
         <Button className='aspect-square p-0' variant='outline' aria-label='Github' asChild>
           <a href='https://github.com/milhamm' target='_blank' rel='noopener noreferrer'>
-            <Github className='size-4 text-muted-foreground' />
+            <Github className='text-muted-foreground size-4' />
           </a>
         </Button>
         <Button className='aspect-square p-0' variant='outline' aria-label='Twitter' asChild>
           <a href='https://twitter.com/gluekol' target='_blank' rel='noopener noreferrer'>
-            <Twitter className='size-4 text-muted-foreground' />
+            <Twitter className='text-muted-foreground size-4' />
           </a>
         </Button>
       </div>
       <div>
-        <h2 className='mt-12 font-prompt text-2xl'>Experiences</h2>
+        <h2 className='font-prompt mt-12 text-2xl'>Experiences</h2>
         <ul className='mt-6 space-y-6'>
           <ExperienceCard
             title='Zero One Group'
@@ -183,7 +183,7 @@ function ExperienceCard({
   classnames = { image: undefined },
 }: ExperienceCardProps) {
   return (
-    <li className='flex flex-col items-start border-b border-border/80 pb-6 last-of-type:border-none md:flex-row md:items-center'>
+    <li className='border-border/80 flex flex-col items-start border-b pb-6 last-of-type:border-none md:flex-row md:items-center'>
       <div className='flex flex-1 gap-4'>
         <div className={cn('mask-squircle p-2', classnames.image)}>
           <Image src={logo} width={38} height={38} alt={alt} />
@@ -197,10 +197,10 @@ function ExperienceCard({
           >
             {title}
           </a>
-          <span className='text-sm text-muted-foreground'>{role}</span>
+          <span className='text-muted-foreground text-sm'>{role}</span>
         </div>
       </div>
-      <span className='mt-2 self-end text-xs text-muted-foreground md:mt-0 md:self-auto md:text-sm'>
+      <span className='text-muted-foreground mt-2 self-end text-xs md:mt-0 md:self-auto md:text-sm'>
         {year}
       </span>
     </li>

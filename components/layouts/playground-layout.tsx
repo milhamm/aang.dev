@@ -9,7 +9,7 @@ export function PlaygroundLayout({ children, title, subtitle }: PlaygroundLayout
     <>
       <header className='mb-12 space-y-4'>
         <h1 className='font-prompt text-4xl font-bold'>{title}</h1>
-        <p className='text-lg text-muted-foreground'>{subtitle}</p>
+        <p className='text-muted-foreground text-lg'>{subtitle}</p>
       </header>
       <div className='flex w-full flex-col'>{children}</div>
     </>
