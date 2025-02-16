@@ -2,7 +2,7 @@ import { generatePlaygroundOgImage } from '@/features/playground/server'
 
 export default async function OGImage() {
   return generatePlaygroundOgImage({
-    title: 'Shimmer Button Animation',
-    description: 'A shimmer effect on hover using conic-gradient',
+    title: 'Kinetic Carousel',
+    description: `A recreation of Rauno Freiberg's Kinetic Carousel from ui.gallery`,
   })
 }
