@@ -10,15 +10,15 @@ type PlaygroundOgImageOpts = {
 
 export async function generatePlaygroundOgImage(props: PlaygroundOgImageOpts) {
   const promptData = await fs.readFile(
-    path.join(fileURLToPath(import.meta.url), '../../../public/fonts/Prompt-Bold.ttf')
+    path.join(fileURLToPath(import.meta.url), '../../../../public/fonts/Prompt-Bold.ttf')
   )
 
   const promptBoldData = await fs.readFile(
-    path.join(fileURLToPath(import.meta.url), '../../../public/fonts/Prompt-Bold.ttf')
+    path.join(fileURLToPath(import.meta.url), '../../../../public/fonts/Prompt-Bold.ttf')
   )
 
   const monoData = await fs.readFile(
-    path.join(fileURLToPath(import.meta.url), '../../../public/fonts/UbuntuMono-Regular.ttf')
+    path.join(fileURLToPath(import.meta.url), '../../../../public/fonts/UbuntuMono-Regular.ttf')
   )
 
   return new ImageResponse(
