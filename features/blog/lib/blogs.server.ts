@@ -5,37 +5,15 @@ import path from 'path'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypePrettyCode from 'rehype-pretty-code'
 
-import { ColorPallete } from './pallete'
+import { BlogPost, GetBlogPost, MatterMetadata } from '../types'
 
-const BLOG_DIR = path.join(process.cwd(), '/contents/blogs')
+const BLOG_DIR = path.join(process.cwd(), '/features/blog/contents')
 const FILENAME = 'index.mdx'
 
 async function getBlogEntries() {
   const paths = await fs.readdir(BLOG_DIR)
   return paths
 }
-
-type BundleMDXReturn = Awaited<ReturnType<typeof bundleMDX<MatterMetadata>>>
-
-export type MatterMetadata = {
-  title: string
-  status: 'published' | 'draft'
-  pallete: ColorPallete
-  publishedAt: string
-  updatedAt: string
-}
-
-export type BlogPostMDXContent = {
-  success: true
-  data: BundleMDXReturn & { slug: string }
-}
-
-export type GetBlogPost =
-  | BlogPostMDXContent
-  | {
-      success: false
-      data: null
-    }
 
 export async function getBlogPost(slug: string): Promise<GetBlogPost> {
   const currentBlogDir = path.join(BLOG_DIR, slug)
@@ -64,11 +42,11 @@ export async function getBlogPost(slug: string): Promise<GetBlogPost> {
         ]
         return options
       },
-      // esbuildOptions(options) {
-      //   options.loader = { '.js': 'jsx' }
-      //   options.tsconfig = `${process.cwd()}/tsconfig.esbuild.json`
-      //   return options
-      // },
+      esbuildOptions(options) {
+        options.loader = { '.js': 'jsx' }
+        options.tsconfig = `${process.cwd()}/tsconfig.esbuild.json`
+        return options
+      },
     })
     return { success: true, data: { ...mdxOut, slug } }
   } catch (_) {
@@ -78,11 +56,6 @@ export async function getBlogPost(slug: string): Promise<GetBlogPost> {
 
 type GetAllBlogPostsArgs = {
   withDraft?: boolean
-}
-
-export type BlogPost = {
-  slug: string
-  metadata: MatterMetadata
 }
 
 export async function getAllBlogPosts({ withDraft }: GetAllBlogPostsArgs = {}): Promise<

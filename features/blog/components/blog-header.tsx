@@ -1,7 +1,7 @@
-import { MatterMetadata } from '@/lib/blogs.server'
 import { DateFormatter } from '@/lib/date'
 import { pallete } from '@/lib/pallete'
 import { cn } from '@/lib/utils'
+import { MatterMetadata } from '../types'
 
 type BlogHeaderProps = {
   frontmatter: MatterMetadata
