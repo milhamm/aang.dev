@@ -1,4 +1,5 @@
 export * from './button'
+export * from './dialog'
 export * from './heading'
 export * from './links'
 export * from './slider'
