@@ -1,8 +1,7 @@
 import { Metadata } from 'next'
 
 import { PlaygroundLayout } from '@/components/layouts/playground-layout'
-
-import { ShimmerButton } from './shimmer-button'
+import { ShimmerButton } from '@/features/playground'
 
 export const metadata: Metadata = {
   title: 'Shimmer Button Animation - aang.dev',

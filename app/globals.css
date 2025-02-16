@@ -2,6 +2,7 @@
 
 @plugin '@tailwindcss/typography';
 @plugin 'tailwindcss-animate';
+@plugin '../lib/plugins/dots.mjs';
 
 @custom-variant dark (&:is(.dark *));
 

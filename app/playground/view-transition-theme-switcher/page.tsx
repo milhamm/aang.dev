@@ -1,9 +1,7 @@
 import { Metadata } from 'next'
 
 import { PlaygroundLayout } from '@/components/layouts/playground-layout'
-
-import { ThemeSwitcherButton } from './theme-switcher-button'
-import { ThemeSwitcherButton2 } from './theme-switcher-button-2'
+import { ThemeSwitcherButton, ThemeSwitcherButton2 } from '@/features/playground'
 
 export const metadata: Metadata = {
   title: 'View Transition Theme Switcher - aang.dev',

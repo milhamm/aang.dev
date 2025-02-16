@@ -1,8 +1,7 @@
 import { Metadata } from 'next'
 
 import { PlaygroundLayout } from '@/components/layouts/playground-layout'
-
-import { KineticCarousel } from './kinetic-carousel'
+import { KineticCarousel } from '@/features/playground'
 
 export const metadata: Metadata = {
   title: 'Kinetic Carousel',
