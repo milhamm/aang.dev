@@ -1,4 +1,6 @@
 export * from './button'
+export * from './dialog'
+export * from './grid-system'
 export * from './heading'
 export * from './links'
 export * from './slider'

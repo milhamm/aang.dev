@@ -1,6 +1,236 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin '@tailwindcss/typography';
+@plugin 'tailwindcss-animate';
+@plugin '../lib/plugins/dots.mjs';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans:
+    var(--font-brand), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-head:
+    var(--font-head), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-prompt:
+    var(--font-prompt), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-bricolage:
+    var(--font-bricolage), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@theme {
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-ken-burns: ken-burns 1s ease-in;
+  --animate-not-so-boring: not-so-boring 1.2s ease-out;
+  --animate-not-so-boring-fast: not-so-boring-two 0.3s ease both;
+  --animate-shimmer-button: 1.5s shimmer-button ease-in-out;
+  --animate-scale-in: scaleIn 200ms ease;
+  --animate-scale-out: scaleOut 200ms ease;
+  --animate-fade-in: fadeIn 200ms ease;
+  --animate-fade-out: fadeOut 200ms ease;
+  --animate-enter-from-left: enterFromLeft 250ms ease;
+  --animate-enter-from-right: enterFromRight 250ms ease;
+  --animate-exit-to-left: exitToLeft 250ms ease;
+  --animate-exit-to-right: exitToRight 250ms ease;
+
+  @keyframes shimmer-button {
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translate(0, 0);
+    }
+  }
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+  @keyframes not-so-boring {
+    0% {
+      opacity: 0;
+      filter: brightness(1) blur(20px);
+    }
+    10% {
+      opacity: 1;
+      filter: brightness(2) blur(10px);
+    }
+    100% {
+      opacity: 1;
+      filter: brightness(1) blur(0);
+    }
+  }
+  @keyframes not-so-boring-two {
+    0% {
+      opacity: 0;
+      filter: brightness(1) blur(5px);
+    }
+    10% {
+      opacity: 1;
+      filter: brightness(2) blur(2px);
+    }
+    100% {
+      opacity: 1;
+      filter: brightness(1) blur(0);
+    }
+  }
+  @keyframes ken-burns {
+    0% {
+      opacity: 0;
+      clip-path: inset(5%);
+      transform: scale(111.11%);
+    }
+    100% {
+      opacity: 1;
+      clip-path: inset(0);
+      transform: scale(1);
+    }
+  }
+  @keyframes enterFromRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+  @keyframes enterFromLeft {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+  @keyframes exitToRight {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+  @keyframes exitToLeft {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: rotateX(-10deg) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: rotateX(0deg) scale(1);
+    }
+  }
+  @keyframes scaleOut {
+    from {
+      opacity: 1;
+      transform: rotateX(0deg) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: rotateX(-10deg) scale(0.95);
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 @layer base {
   :root {
@@ -48,8 +278,8 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 43 96% 56%;
+    --primary-foreground: 222.2 84% 4.9%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -71,20 +301,22 @@
   }
 }
 
-::selection {
-  color: #fff;
-  background: var(--framer-accent);
-}
+@layer utilities {
+  ::selection {
+    color: #fff;
+    background: var(--framer-accent);
+  }
 
-.mask-squircle {
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjAwJyBoZWlnaHQ9JzIwMCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cGF0aCBkPSdNMTAwIDBDMjAgMCAwIDIwIDAgMTAwczIwIDEwMCAxMDAgMTAwIDEwMC0yMCAxMDAtMTAwUzE4MCAwIDEwMCAwWicvPjwvc3ZnPg==);
-  mask-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjAwJyBoZWlnaHQ9JzIwMCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cGF0aCBkPSdNMTAwIDBDMjAgMCAwIDIwIDAgMTAwczIwIDEwMCAxMDAgMTAwIDEwMC0yMCAxMDAtMTAwUzE4MCAwIDEwMCAwWicvPjwvc3ZnPg==);
+  .mask-squircle {
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjAwJyBoZWlnaHQ9JzIwMCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cGF0aCBkPSdNMTAwIDBDMjAgMCAwIDIwIDAgMTAwczIwIDEwMCAxMDAgMTAwIDEwMC0yMCAxMDAtMTAwUzE4MCAwIDEwMCAwWicvPjwvc3ZnPg==);
+    mask-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjAwJyBoZWlnaHQ9JzIwMCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cGF0aCBkPSdNMTAwIDBDMjAgMCAwIDIwIDAgMTAwczIwIDEwMCAxMDAgMTAwIDEwMC0yMCAxMDAtMTAwUzE4MCAwIDEwMCAwWicvPjwvc3ZnPg==);
+  }
 }
 
 @layer base {

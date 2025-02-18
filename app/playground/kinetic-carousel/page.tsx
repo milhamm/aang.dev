@@ -1,8 +1,7 @@
 import { Metadata } from 'next'
 
 import { PlaygroundLayout } from '@/components/layouts/playground-layout'
-
-import { KineticCarousel } from './kinetic-carousel'
+import { KineticCarousel } from '@/features/playground'
 
 export const metadata: Metadata = {
   title: 'Kinetic Carousel',
@@ -16,7 +15,7 @@ export default function PlaygroundPage() {
       subtitle="A recreation of Rauno Freiberg's Kinetic Carousel from ui.gallery"
     >
       <KineticCarousel />
-      <article className='prose mt-12 dark:prose-invert prose-headings:font-prompt'>
+      <article className='prose dark:prose-invert prose-headings:font-prompt mt-12'>
         <h3>Links</h3>
         <ul>
           <li>

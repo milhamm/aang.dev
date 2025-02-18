@@ -1,4 +1,4 @@
-import { Inter_Tight, Nunito, Prompt } from 'next/font/google'
+import { Inter_Tight, Nunito, Prompt, Bricolage_Grotesque } from 'next/font/google'
 
 import { cn } from '@/lib/utils'
 
@@ -30,10 +30,25 @@ const prompt = Prompt({
   variable: '--font-prompt',
 })
 
+const bricolage = Bricolage_Grotesque({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-bricolage',
+})
+
 export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={cn(nunito.variable, interTight.variable, prompt.variable, 'font-sans')}>
+      <body
+        className={cn(
+          nunito.variable,
+          interTight.variable,
+          prompt.variable,
+          bricolage.variable,
+          'font-sans'
+        )}
+      >
         <Providers>{children}</Providers>
       </body>
     </html>
