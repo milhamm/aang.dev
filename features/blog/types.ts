@@ -6,6 +6,7 @@ export type BundleMDXReturn = Awaited<ReturnType<typeof bundleMDX<MatterMetadata
 export type MatterMetadata = {
   title: string
   status: 'published' | 'draft'
+  tags: string
   pallete: ColorPallete
   publishedAt: string
   updatedAt: string

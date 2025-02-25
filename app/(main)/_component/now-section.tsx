@@ -1,4 +1,5 @@
 import { Grid } from '@/components/ui'
+import { NowCarousel } from './now-carousel'
 
 export function NowSection() {
   return (
@@ -15,6 +16,7 @@ export function NowSection() {
             The place where I currently dedicate my time to develop and maintain high-impact web
             applications for diverse global industries.
           </p>
+          <NowCarousel />
         </Grid.Cell>
       </Grid>
     </section>

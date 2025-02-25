@@ -74,5 +74,10 @@ export async function getAllBlogPosts({ withDraft }: GetAllBlogPostsArgs = {}): 
     })
   )
 
-  return posts.filter((post) => withDraft || post.metadata['status'] !== 'draft')
+  return posts
+    .toSorted(
+      (a, b) =>
+        new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime()
+    )
+    .filter((post) => withDraft || post.metadata['status'] !== 'draft')
 }
