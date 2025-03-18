@@ -1,9 +1,9 @@
 'use client'
 
 import { createContext, CSSProperties, useContext } from 'react'
+import { Slot } from '@radix-ui/react-slot'
 
 import { cn } from '@/lib/utils'
-import { Slot } from '@radix-ui/react-slot'
 
 const GridSystemContext = createContext<number>(0)
 

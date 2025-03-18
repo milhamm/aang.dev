@@ -1,5 +1,6 @@
-import { Inter_Tight, Nunito, Prompt, Bricolage_Grotesque } from 'next/font/google'
+import { Bricolage_Grotesque, Inter_Tight, Manrope, Prompt } from 'next/font/google'
 
+import { BackgroundNoise } from '@/components/shared/background-noise'
 import { cn } from '@/lib/utils'
 
 import { Providers } from './providers'
@@ -11,7 +12,7 @@ export const metadata = {
   description: 'Personal Blog',
 }
 
-const nunito = Nunito({
+const manrope = Manrope({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-brand',
@@ -42,7 +43,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
     <html lang='en' suppressHydrationWarning>
       <body
         className={cn(
-          nunito.variable,
+          manrope.variable,
           interTight.variable,
           prompt.variable,
           bricolage.variable,
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
         )}
       >
         <Providers>{children}</Providers>
+        <BackgroundNoise />
       </body>
     </html>
   )

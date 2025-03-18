@@ -1,16 +1,19 @@
-import { Grid } from '@/components/ui'
 import { CSSProperties } from 'react'
+import Image from 'next/image'
 
-const ROWS = 6
-const COLUMNS = 9
+import { Grid } from '@/components/ui'
+
+const ROWS = 8
+const COLUMNS = 12
 const ROW_SPAN_START = 2
-const ROW_SPAN_END = 5
+const ROW_SPAN_END = ROWS - 1
 const COL_SPAN_START = 2
-const COL_SPAN_END = 9
+const COL_SPAN_END = COLUMNS
 
 export function HeroSection() {
   return (
     <section
+      className='relative'
       style={
         {
           '--width': 'calc(var(--container-4xl) - ((var(--spacing) * 5) * 2))',
@@ -19,6 +22,18 @@ export function HeroSection() {
         } as CSSProperties
       }
     >
+      <div className='absolute inset-0 z-50 overflow-clip mix-blend-darken dark:mix-blend-screen'>
+        <Image
+          src='/images/reeded-glass.png'
+          fill
+          alt='reeded glass'
+          className='scale-150 scale-x-200 object-fill object-bottom'
+          style={{
+            top: 'unset',
+            bottom: '-50%',
+          }}
+        />
+      </div>
       <Grid
         columnSpanStart={COL_SPAN_START}
         columnSpanEnd={COL_SPAN_END}

@@ -8,7 +8,7 @@ type SplitTextProps = {
 } & HTMLMotionProps<'div'>
 
 export function SplitText({ children, ...rest }: SplitTextProps) {
-  let words = children.split(' ')
+  const words = children.split(' ')
 
   return (
     <div>

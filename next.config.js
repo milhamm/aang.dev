@@ -10,6 +10,7 @@ module.exports = {
       },
     ],
   },
+  transpilePackages: ['three'],
   rewrites: async () => {
     return [
       {

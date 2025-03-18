@@ -1,4 +1,5 @@
 import { Grid } from '@/components/ui'
+
 import { NowCarousel } from './now-carousel'
 
 export function NowSection() {
