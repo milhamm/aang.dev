@@ -1,0 +1,45 @@
+{
+  "name": "v2",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "react-router build",
+    "dev": "react-router dev",
+    "start": "react-router-serve ./build/server/index.js",
+    "typecheck": "react-router typegen && tsc"
+  },
+  "dependencies": {
+    "@mdx-js/react": "^3.1.0",
+    "@mdx-js/rollup": "^3.1.0",
+    "@radix-ui/react-slot": "^1.1.2",
+    "@react-router/node": "^7.1.5",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "isbot": "^5.1.17",
+    "lucide-react": "^0.485.0",
+    "motion": "^12.6.2",
+    "next-themes": "^0.4.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router": "^7.1.5",
+    "tailwind-merge": "^3.0.2",
+    "tw-animate-css": "^1.2.5"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@react-router/dev": "^7.1.5",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.0.17",
+    "@types/node": "^20",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "@vercel/node": "^5.1.2",
+    "@vercel/react-router": "^1.0.2",
+    "remark-frontmatter": "^5.0.0",
+    "remark-mdx-frontmatter": "^5.1.0",
+    "tailwindcss": "^4.0.17",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
+}
