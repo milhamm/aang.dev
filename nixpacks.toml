@@ -1,0 +1,5 @@
+[variables]
+NIXPACKS_NODE_VERSION = "24"
+
+[start]
+cmd = "node .output/server/index.mjs"

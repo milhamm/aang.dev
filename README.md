@@ -1,23 +1,36 @@
-# Aang // Muhammad Ilham Mubarak
+# aang.dev
 
-This is my personalized website. Used to showcase my portfolio, projects, and many more!
+Personal site built with TanStack Start — full-document SSR.
 
-Built with Next.js
+## Stack
 
-## 🌐 [aang.dev](https://aang.dev)
+- [TanStack Start](https://tanstack.com/start) + file-based TanStack Router
+- [StyleX](https://stylexjs.com) for styling
+- [oxlint](https://oxc.rs/docs/guide/usage/linter) + [oxfmt](https://oxc.rs/docs/guide/usage/formatter) for linting and formatting
+- Nitro server output, deployed via Nixpacks
 
-## Getting Started
-
-First, run the development server:
+## Develop
 
 ```bash
+pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Tech Stacks
+## Build & run
 
-- Next.js (App dir)
-- Framer Motion
-- TailwindCSS
+```bash
+pnpm build
+pnpm start
+```
+
+[`nixpacks.toml`](nixpacks.toml) pins Node 24 for Nixpacks-based hosts.
+
+## Quality
+
+```bash
+pnpm lint     # oxlint --fix
+pnpm format   # oxfmt
+pnpm check    # oxlint + oxfmt --check (CI)
+```
