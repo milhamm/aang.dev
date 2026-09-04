@@ -25,7 +25,7 @@ pnpm build
 pnpm start
 ```
 
-[`nixpacks.toml`](nixpacks.toml) pins Node 24 for Nixpacks-based hosts.
+[`nixpacks.toml`](nixpacks.toml) pins Node 24 and a nixpkgs archive that actually provides `nodejs_24`.
 
 ## Quality
 
