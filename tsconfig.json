@@ -1,34 +1,27 @@
 {
-    "$schema": "https://json.schemastore.org/tsconfig",
+    "include": ["**/*.ts", "**/*.tsx"],
+
     "compilerOptions": {
-        "target": "ESNext",
-        "lib": ["dom", "dom.iterable", "esnext"],
-        "allowJs": true,
-        "noImplicitAny": true,
+        "target": "ES2022",
+        "jsx": "react-jsx",
+        "module": "ESNext",
+        "paths": {
+            "#/*": ["./src/*"],
+            "@/*": ["./src/*"]
+        },
+        "lib": ["ES2022", "DOM", "DOM.Iterable"],
+        "types": ["vite/client"],
+
+        "moduleResolution": "bundler",
+        "allowImportingTsExtensions": true,
+        "verbatimModuleSyntax": true,
+        "noEmit": true,
+
         "skipLibCheck": true,
         "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "noEmit": true,
-        "esModuleInterop": true,
-        "module": "esnext",
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "jsx": "preserve",
-        "baseUrl": ".",
-        "paths": {
-            "@/app/*": ["./app/*"],
-            "@/components/*": ["./components/*"],
-            "@/lib/*": ["./lib/*"],
-            "~/*": ["./public/*"]
-        },
-        "incremental": true,
-        "plugins": [
-            {
-                "name": "next"
-            }
-        ]
-    },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-    "exclude": ["node_modules"]
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUncheckedSideEffectImports": true
+    }
 }

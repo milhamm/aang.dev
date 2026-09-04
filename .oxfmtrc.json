@@ -1,0 +1,51 @@
+{
+    "$schema": "./node_modules/oxfmt/configuration_schema.json",
+    "tabWidth": 4,
+    "printWidth": 100,
+    "sortImports": {},
+    "singleQuote": true,
+    "semi": false,
+    "overrides": [
+        {
+            "files": ["*.js", "*.ts", "*.jsx", "*.tsx", "*.mjs", "*.cjs"],
+            "options": {
+                "tabWidth": 2,
+                "jsxSingleQuote": false,
+                "trailingComma": "es5",
+                "singleQuote": true
+            }
+        },
+        {
+            "files": ["*.css"],
+            "options": {
+                "singleQuote": false
+            }
+        },
+        {
+            "files": ["*.json"],
+            "options": {
+                "tabWidth": 4,
+                "trailingComma": "none"
+            }
+        }
+    ],
+    "ignorePatterns": [
+        "**/build/*",
+        "**/dist/*",
+        "**/out/*",
+        "**/.output/*",
+        "**/infra/*",
+        "**/vendor/*",
+        "**/temp/*",
+        "**/tmp/*",
+        "**/.astro",
+        "**/.next",
+        "**/.tanstack",
+        "infrastructure/*",
+        "templates/*",
+        "docsite/*",
+        ".moon/*",
+        ".temp/*",
+        "src/routeTree.gen.ts"
+    ]
+}
