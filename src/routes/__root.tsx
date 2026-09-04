@@ -1,6 +1,9 @@
 import { HeadContent, Outlet, Scripts, createRootRoute } from '@tanstack/react-router'
 
-import appCss from '../styles.css?url'
+import { DevStyleXInject } from '#/components/dev-stylex-inject'
+
+import globalCss from '#/styles/global.css?url'
+import '#/styles/global.css'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -14,7 +17,7 @@ export const Route = createRootRoute({
       { title: 'Ilham Mubarak // Aang' },
     ],
     links: [
-      { rel: 'stylesheet', href: appCss },
+      { rel: 'stylesheet', href: globalCss },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       {
         rel: 'preconnect',
@@ -41,6 +44,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <DevStyleXInject />
       </head>
       <body>
         {children}
